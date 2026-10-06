@@ -12,6 +12,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Badge, badgeVariants } from "@/components/ui/badge";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import ImageDropzone from "@/components/ImageDropzone";
+import ContactFields, { emptyContact, isContactValid, type Contact } from "@/components/ContactFields";
 import { cn } from "@/lib/utils";
 
 const SPACES = [
@@ -32,8 +33,8 @@ export default function AiLandscapeDesigner() {
   const [spaceType, setSpaceType] = useState("terrace");
   const [image, setImage] = useState<string | null>(null);
   const [notes, setNotes] = useState("");
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
+  const [contact, setContact] = useState<Contact>(emptyContact);
+  const [touched, setTouched] = useState(false);
   const [result, setResult] = useState<DesignResult | null>(null);
   const [imageModel, setImageModel] = useState("");
   const [regenIndex, setRegenIndex] = useState<number | null>(null);
@@ -52,8 +53,8 @@ export default function AiLandscapeDesigner() {
         image_b64: image ?? undefined,
         space_type: spaceType,
         notes,
-        name,
-        phone,
+        name: contact.name,
+        phone: contact.phone,
         image_model: activeModel || undefined,
       }),
     onSuccess: (data) => {
@@ -124,16 +125,13 @@ export default function AiLandscapeDesigner() {
                 placeholder="West-facing, 12th floor, gets very windy, want a seating corner and low maintenance…"
               />
             </div>
-            <div className="grid gap-4 sm:grid-cols-2">
-              <div className="space-y-1.5">
-                <Label htmlFor="designer-name">Name (optional)</Label>
-                <Input id="designer-name" data-testid="designer-name-input" value={name} onChange={(e) => setName(e.target.value)} placeholder="For the quote follow-up" />
-              </div>
-              <div className="space-y-1.5">
-                <Label htmlFor="designer-phone">Phone (optional)</Label>
-                <Input id="designer-phone" data-testid="designer-phone-input" value={phone} onChange={(e) => setPhone(e.target.value)} inputMode="tel" placeholder="For an architect call-back" />
-              </div>
-            </div>
+            <ContactFields
+              value={contact}
+              onChange={setContact}
+              idPrefix="designer"
+              showErrors={touched}
+              note="Required — an architect calls you back about the concept you like. No spam, ever."
+            />
             <div className="space-y-2">
               <Label>Concept image model</Label>
               <Select value={activeModel} onValueChange={setImageModel}>
@@ -152,7 +150,14 @@ export default function AiLandscapeDesigner() {
               data-testid="designer-generate-button"
               className="w-full gap-2"
               size="lg"
-              onClick={() => mutation.mutate()}
+              onClick={() => {
+                setTouched(true);
+                if (!isContactValid(contact)) {
+                  toast.warning("Please add your name and phone number first.");
+                  return;
+                }
+                mutation.mutate();
+              }}
               disabled={mutation.isPending}
             >
               {mutation.isPending ? (<><Loader2 className="size-4 animate-spin" /> Designing your space…</>) : (<><Sparkles className="size-4" /> Generate 3 concepts</>)}

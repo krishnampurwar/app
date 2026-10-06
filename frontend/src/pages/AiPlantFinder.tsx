@@ -7,6 +7,7 @@ import type { QuizResult } from "@/lib/types";
 import { Container, PageHero, PrimaryLink, SectionHeading, WhatsAppButton, rupees } from "@/components/Shared";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import ContactFields, { emptyContact, isContactValid, type Contact } from "@/components/ContactFields";
 import { cn } from "@/lib/utils";
 
 const QUESTIONS = [
@@ -58,9 +59,11 @@ export default function AiPlantFinder() {
     traits: [],
   });
   const [result, setResult] = useState<QuizResult | null>(null);
+  const [contact, setContact] = useState<Contact>(emptyContact);
+  const [touched, setTouched] = useState(false);
 
   const mutation = useMutation({
-    mutationFn: () => apiPost<QuizResult>("/ai/plant-finder", answers),
+    mutationFn: () => apiPost<QuizResult>("/ai/plant-finder", { ...answers, name: contact.name, phone: contact.phone }),
     onSuccess: (data) => {
       setResult(data);
       toast.success("Your plant matches are ready.");
@@ -79,6 +82,8 @@ export default function AiPlantFinder() {
   const restart = () => {
     setAnswers({ placement: "", sunlight: "", care: "", traits: [] });
     setResult(null);
+    setContact(emptyContact);
+    setTouched(false);
     setStep(0);
   };
 
@@ -171,7 +176,8 @@ export default function AiPlantFinder() {
               </div>
             ) : (
               <div className="mt-8 animate-grow-in" data-testid="plant-quiz-step-4">
-                <h2 className="font-heading text-2xl font-semibold text-foreground">Anything special? (optional)</h2>
+                <h2 className="font-heading text-2xl font-semibold text-foreground">Last step — where do we send your matches?</h2>
+                <p className="mt-1 text-sm text-muted-foreground">Pick any traits you care about, then add your details.</p>
                 <div className="mt-6 flex flex-wrap gap-3">
                   {TRAITS.map((t) => (
                     <button
@@ -188,7 +194,29 @@ export default function AiPlantFinder() {
                     </button>
                   ))}
                 </div>
-                <Button size="lg" className="mt-8 w-full gap-2" data-testid="finder-submit-button" onClick={() => mutation.mutate()} disabled={mutation.isPending}>
+                <div className="mt-6">
+                  <ContactFields
+                    value={contact}
+                    onChange={setContact}
+                    idPrefix="finder"
+                    showErrors={touched}
+                    note="Required — we check live stock for your matches and WhatsApp you the prices."
+                  />
+                </div>
+                <Button
+                  size="lg"
+                  className="mt-6 w-full gap-2"
+                  data-testid="finder-submit-button"
+                  onClick={() => {
+                    setTouched(true);
+                    if (!isContactValid(contact)) {
+                      toast.warning("Please add your name and phone number first.");
+                      return;
+                    }
+                    mutation.mutate();
+                  }}
+                  disabled={mutation.isPending}
+                >
                   {mutation.isPending ? "Matching…" : (<><ArrowRight className="size-4" /> Show my matches</>)}
                 </Button>
               </div>

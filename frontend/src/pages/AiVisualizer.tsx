@@ -11,6 +11,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import ContactFields, { emptyContact, isContactValid, type Contact } from "@/components/ContactFields";
 import { cn } from "@/lib/utils";
 
 const SPACES = [
@@ -42,8 +43,8 @@ export default function AiVisualizer() {
   const [style, setStyle] = useState("modern biophilic");
   const [description, setDescription] = useState("");
   const [model, setModel] = useState<string>("");
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
+  const [contact, setContact] = useState<Contact>(emptyContact);
+  const [touched, setTouched] = useState(false);
   const [result, setResult] = useState<VisualizeResult | null>(null);
 
   const { data: models } = useQuery({
@@ -61,8 +62,8 @@ export default function AiVisualizer() {
         style,
         description,
         image_model: activeModel || undefined,
-        name,
-        phone,
+        name: contact.name,
+        phone: contact.phone,
       }),
     onSuccess: (data) => {
       setResult(data);
@@ -174,22 +175,26 @@ export default function AiVisualizer() {
               </p>
             </div>
 
-            <div className="grid gap-4 sm:grid-cols-2">
-              <div className="space-y-1.5">
-                <Label htmlFor="visualizer-name">Name (optional)</Label>
-                <Input id="visualizer-name" data-testid="visualizer-name-input" value={name} onChange={(e) => setName(e.target.value)} />
-              </div>
-              <div className="space-y-1.5">
-                <Label htmlFor="visualizer-phone">Phone (optional)</Label>
-                <Input id="visualizer-phone" data-testid="visualizer-phone-input" value={phone} onChange={(e) => setPhone(e.target.value)} inputMode="tel" />
-              </div>
-            </div>
+            <ContactFields
+              value={contact}
+              onChange={setContact}
+              idPrefix="visualizer"
+              showErrors={touched}
+              note="Required — we send the render and follow up on WhatsApp. No spam, ever."
+            />
 
             <Button
               size="lg"
               className="w-full gap-2"
               data-testid="visualizer-generate-button"
-              onClick={() => mutation.mutate()}
+              onClick={() => {
+                setTouched(true);
+                if (!isContactValid(contact)) {
+                  toast.warning("Please add your name and phone number first.");
+                  return;
+                }
+                mutation.mutate();
+              }}
               disabled={mutation.isPending}
             >
               {mutation.isPending ? (<><Loader2 className="size-4 animate-spin" /> Rendering your garden…</>) : (<><Wand2 className="size-4" /> Visualise my garden</>)}

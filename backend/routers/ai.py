@@ -16,6 +16,7 @@ from lib.ai import api_key, clean_b64, complete_json, make_chat, new_session
 from lib.db import db
 from lib.images import available_models, garden_prompt, generate_image, generate_image_safe
 from lib.leads import save_lead
+from models.contact import ContactRequired
 from models.leads import LeadCreate
 
 router = APIRouter()
@@ -71,11 +72,9 @@ def _user_message(**kwargs):
 
 # ---------------------------------------------------------------- AI Plant Doctor
 
-class PlantDoctorRequest(BaseModel):
+class PlantDoctorRequest(ContactRequired):
     image_b64: str
     notes: str = ""
-    name: str = ""
-    phone: str = ""
 
 
 class Diagnosis(BaseModel):
@@ -113,12 +112,10 @@ async def plant_doctor(req: PlantDoctorRequest):
 
 # ---------------------------------------------------------------- AI Landscape Designer
 
-class DesignerRequest(BaseModel):
+class DesignerRequest(ContactRequired):
     image_b64: Optional[str] = None
     space_type: str  # balcony | terrace | villa | office | atrium
     notes: str = ""
-    name: str = ""
-    phone: str = ""
     image_model: Optional[str] = None  # preferred image-generation model
 
 
@@ -190,13 +187,11 @@ async def landscape_designer(req: DesignerRequest):
 
 # ---------------------------------------------------------------- What Plant Should I Buy?
 
-class QuizRequest(BaseModel):
+class QuizRequest(ContactRequired):
     placement: str  # living_room | bedroom | office | balcony | terrace | garden
     sunlight: str  # low | medium | direct
     care: str  # very_low | medium | high
     traits: List[str] = []
-    name: str = ""
-    phone: str = ""
 
 
 class PlantPick(BaseModel):
@@ -283,9 +278,7 @@ async def plant_finder(req: QuizRequest):
 
 # ---------------------------------------------------------------- AI Proposal Studio
 
-class ProposalRequest(BaseModel):
-    name: str = ""
-    phone: str = ""
+class ProposalRequest(ContactRequired):
     property_type: str
     area_sqft: int = 0
     location: str = "Gurgaon"
@@ -367,13 +360,11 @@ async def image_models():
     return [ImageModelOut(**m.__dict__) for m in available_models()]
 
 
-class VisualizeRequest(BaseModel):
+class VisualizeRequest(ContactRequired):
     space_type: str = "terrace"
     style: str = "modern biophilic"
     description: str = ""
     image_model: Optional[str] = None
-    name: str = ""
-    phone: str = ""
 
 
 class VisualizeResult(BaseModel):

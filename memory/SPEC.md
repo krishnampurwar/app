@@ -38,6 +38,17 @@ Endpoints: `GET /api/ai/image-models`, `POST /api/ai/visualize`, `POST /api/ai/r
 Surfaces: `/ai-visualizer` (standalone page, model picker + download + re-render) and the Landscape
 Designer (model select + per-concept "Re-render").
 
+## Compulsory contact details
+Name + phone are **required** on all five AI tools (plant doctor, designer, plant finder, proposal,
+visualizer). Enforced twice:
+- Backend: `models/contact.py` → `ContactRequired` mixin (name ≥2 chars, phone 10–13 digits after
+  stripping non-digits). Inherited by every AI request model, so FastAPI returns **422** before the
+  handler runs — no AI credits are spent on anonymous requests. Chat (`/ai/ask-aj`) is exempt; its
+  "Book a nursery visit" dialog uses LeadForm, which already requires both.
+- Frontend: `components/ContactFields.tsx` (shared) → red asterisks, inline per-field errors, submit
+  blocked with a toast until valid. The Plant Finder quiz's final step is now the contact step.
+Every AI lead therefore has a phone, so no AI-tool lead can be scored `cold` for lack of contact.
+
 ## Auth / credentials
 - Admin dashboard PIN: env `ADMIN_PIN` in backend/.env — **9079**
 - WhatsApp number for all CTAs: **+91 93362 39079** (wa.me/919336239079), env WHATSAPP_NUMBER

@@ -12,6 +12,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Badge, badgeVariants } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import ImageDropzone from "@/components/ImageDropzone";
+import ContactFields, { emptyContact, isContactValid, type Contact } from "@/components/ContactFields";
 import LeadForm from "@/components/LeadForm";
 import { cn } from "@/lib/utils";
 
@@ -24,14 +25,14 @@ const SEVERITY_STYLES: Record<Diagnosis["severity"], string> = {
 export default function AiPlantDoctor() {
   const [image, setImage] = useState<string | null>(null);
   const [notes, setNotes] = useState("");
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
+  const [contact, setContact] = useState<Contact>(emptyContact);
+  const [touched, setTouched] = useState(false);
   const [diagnosis, setDiagnosis] = useState<Diagnosis | null>(null);
   const [bookOpen, setBookOpen] = useState(false);
 
   const mutation = useMutation({
     mutationFn: () =>
-      apiPost<Diagnosis>("/ai/plant-doctor", { image_b64: image ?? "", notes, name, phone }),
+      apiPost<Diagnosis>("/ai/plant-doctor", { image_b64: image ?? "", notes, name: contact.name, phone: contact.phone }),
     onSuccess: (data) => {
       setDiagnosis(data);
       toast.success("Diagnosis ready — review the recovery plan below.");
@@ -67,19 +68,21 @@ export default function AiPlantDoctor() {
               <Label htmlFor="doctor-notes">Symptoms you've noticed (optional)</Label>
               <Textarea id="doctor-notes" data-testid="doctor-notes-input" value={notes} onChange={(e) => setNotes(e.target.value)} rows={2} placeholder="Leaves yellowing from the tips, soil stays damp for days…" />
             </div>
-            <div className="grid gap-4 sm:grid-cols-2">
-              <div className="space-y-1.5">
-                <Label htmlFor="doctor-name">Name (optional)</Label>
-                <Input id="doctor-name" data-testid="doctor-name-input" value={name} onChange={(e) => setName(e.target.value)} placeholder="For the follow-up call" />
-              </div>
-              <div className="space-y-1.5">
-                <Label htmlFor="doctor-phone">Phone (optional)</Label>
-                <Input id="doctor-phone" data-testid="doctor-phone-input" value={phone} onChange={(e) => setPhone(e.target.value)} inputMode="tel" placeholder="For a home-visit booking" />
-              </div>
-            </div>
+            <ContactFields
+              value={contact}
+              onChange={setContact}
+              idPrefix="doctor"
+              showErrors={touched}
+              note="Required — we send the diagnosis and can book a plant-doctor visit. No spam, ever."
+            />
             <Button data-testid="doctor-diagnose-button" size="lg" className="w-full gap-2" onClick={() => {
+              setTouched(true);
               if (!image) {
                 toast.warning("Please upload a photo of the plant first.");
+                return;
+              }
+              if (!isContactValid(contact)) {
+                toast.warning("Please add your name and phone number first.");
                 return;
               }
               setDiagnosis(null);

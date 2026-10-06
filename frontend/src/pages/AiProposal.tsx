@@ -12,6 +12,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
+import ContactFields, { emptyContact, isContactValid, type Contact } from "@/components/ContactFields";
 import LeadForm from "@/components/LeadForm";
 import { LOGO_URL } from "@/components/layout/Header";
 import { rupees } from "@/lib/whatsapp";
@@ -27,8 +28,8 @@ export default function AiProposal() {
   const [features, setFeatures] = useState<string[]>(["Lawn", "Drip automation"]);
   const [budget, setBudget] = useState("₹1L – 3L");
   const [notes, setNotes] = useState("");
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
+  const [contact, setContact] = useState<Contact>(emptyContact);
+  const [touched, setTouched] = useState(false);
   const [proposal, setProposal] = useState<Proposal | null>(null);
   const [surveyOpen, setSurveyOpen] = useState(false);
 
@@ -41,8 +42,8 @@ export default function AiProposal() {
         features,
         budget_range: budget,
         notes,
-        name,
-        phone,
+        name: contact.name,
+        phone: contact.phone,
       }),
     onSuccess: (data) => {
       setProposal(data);
@@ -115,17 +116,21 @@ export default function AiProposal() {
                 <Label htmlFor="proposal-notes">Notes for the designer (optional)</Label>
                 <Textarea id="proposal-notes" data-testid="proposal-notes-input" value={notes} onChange={(e) => setNotes(e.target.value)} rows={2} placeholder="We host family dinners; want evening ambience and privacy from neighbours…" />
               </div>
-              <div className="grid gap-4 sm:grid-cols-2">
-                <div className="space-y-1.5">
-                  <Label htmlFor="proposal-name">Your name (optional)</Label>
-                  <Input id="proposal-name" data-testid="proposal-name-input" value={name} onChange={(e) => setName(e.target.value)} />
-                </div>
-                <div className="space-y-1.5">
-                  <Label htmlFor="proposal-phone">Phone (optional)</Label>
-                  <Input id="proposal-phone" data-testid="proposal-phone-input" value={phone} onChange={(e) => setPhone(e.target.value)} inputMode="tel" />
-                </div>
-              </div>
-              <Button size="lg" className="w-full gap-2" data-testid="proposal-generate-button" onClick={() => mutation.mutate()} disabled={mutation.isPending}>
+              <ContactFields
+                value={contact}
+                onChange={setContact}
+                idPrefix="proposal"
+                showErrors={touched}
+                note="Required — the proposal is prepared in your name and our team follows up. No spam, ever."
+              />
+              <Button size="lg" className="w-full gap-2" data-testid="proposal-generate-button" onClick={() => {
+                setTouched(true);
+                if (!isContactValid(contact)) {
+                  toast.warning("Please add your name and phone number first.");
+                  return;
+                }
+                mutation.mutate();
+              }} disabled={mutation.isPending}>
                 {mutation.isPending ? (<><Loader2 className="size-4 animate-spin" /> Drafting proposal…</>) : (<><ClipboardList className="size-4" /> Generate proposal</>)}
               </Button>
             </div>
