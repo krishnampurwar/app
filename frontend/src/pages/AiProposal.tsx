@@ -270,8 +270,6 @@ export default function AiProposal() {
           <div className="mt-5">
             <LeadForm
               source="proposal"
-              interest={proposal ? `Physical survey for ${proposal.reference}` : "Physical survey"}
-              message={proposal ? `Survey request for proposal ${proposal.reference}: ${proposal.title}` : "Survey request"}
               testid="proposal-survey-lead"
               submitLabel="Book the survey"
               onSuccess={() => setSurveyOpen(false)}

@@ -1,242 +1,134 @@
-import { useMemo, useState } from "react";
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { toast } from "sonner";
-import { Download, Flame, Lock, MessageCircle, Snowflake, Sun, Waves } from "lucide-react";
-import { apiGet, apiPatch, apiPost } from "@/lib/api";
-import type { Lead } from "@/lib/types";
-import { Container, PageHero, SectionHeading, rupees } from "@/components/Shared";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Badge, badgeVariants } from "@/components/ui/badge";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { waLink } from "@/lib/whatsapp";
+import { useQuery } from "@tanstack/react-query";
+import { Link } from "react-router-dom";
+import { BellRing, Inbox, MailCheck, ShieldCheck, Zap } from "lucide-react";
+import { apiGet } from "@/lib/api";
+import type { LeadDestination } from "@/lib/types";
+import { Container, PageHero, PrimaryLink, SectionHeading, WhatsAppButton } from "@/components/Shared";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent } from "@/components/ui/card";
 
-const SCORE_STYLE: Record<string, string> = {
-  hot: "bg-red-100 text-red-800 border-red-200",
-  warm: "bg-amber-100 text-amber-800 border-amber-200",
-  cold: "bg-muted text-muted-foreground border-border",
-};
-
-const STATUS_OPTIONS = ["new", "in_progress", "converted", "closed"];
+const SOURCES = [
+  { label: "Contact form", detail: "Contact page callback requests" },
+  { label: "Maintenance plan signup", detail: "Basic / Premium / Complete subscriptions" },
+  { label: "AI Landscape Designer", detail: "Space photo + 3 concepts generated" },
+  { label: "AI Garden Visualizer", detail: "Rendered garden previews" },
+  { label: "AI Plant Doctor", detail: "Plant diagnosis + ₹499 visit bookings" },
+  { label: "Plant Match Quiz", detail: "Quiz completions with plant picks" },
+  { label: "AI Proposal Generator", detail: "Proposal drafts + survey requests" },
+  { label: "Ask AJ consultant", detail: "Nursery visit bookings from the chat" },
+];
 
 export default function Admin() {
-  const qc = useQueryClient();
-  const [pin, setPin] = useState(() => sessionStorage.getItem("aj-admin-pin") ?? "");
-  const [scoreFilter, setScoreFilter] = useState("all");
-  const [authed, setAuthed] = useState(() => !!sessionStorage.getItem("aj-admin-pin"));
-
-  const login = useMutation({
-    mutationFn: () => apiPost<{ ok: boolean }>("/admin/login", { pin }),
-    onSuccess: () => {
-      sessionStorage.setItem("aj-admin-pin", pin);
-      setAuthed(true);
-      toast.success("Welcome back — here's the pipeline.");
-    },
-    onError: () => toast.error("Wrong PIN. Default demo PIN is 9079."),
+  const { data: destination } = useQuery({
+    queryKey: ["lead-destination"],
+    queryFn: () => apiGet<LeadDestination>("/leads/destination"),
   });
-
-  const { data: leads, isPending } = useQuery({
-    queryKey: ["admin-leads", pin],
-    queryFn: () => apiGet<Lead[]>("/admin/leads", { "X-Admin-PIN": pin }),
-    enabled: authed,
-  });
-
-  const statusMutation = useMutation({
-    mutationFn: ({ id, status }: { id: string; status: string }) =>
-      apiPatch<Lead>(`/admin/leads/${id}`, { status }, { "X-Admin-PIN": pin }),
-    onSuccess: () => qc.invalidateQueries({ queryKey: ["admin-leads"] }),
-    onError: () => toast.error("Could not update status."),
-  });
-
-  const filtered = useMemo(
-    () => (leads ?? []).filter((l) => scoreFilter === "all" || l.score === scoreFilter),
-    [leads, scoreFilter],
-  );
-
-  const stats = useMemo(() => {
-    const all = leads ?? [];
-    return {
-      total: all.length,
-      hot: all.filter((l) => l.score === "hot").length,
-      warm: all.filter((l) => l.score === "warm").length,
-      cold: all.filter((l) => l.score === "cold").length,
-      pipeline: all.reduce((sum, l) => sum + (l.budget_max ?? l.budget_min ?? 0), 0),
-    };
-  }, [leads]);
-
-  function exportCsv() {
-    const rows = [["created", "name", "phone", "source", "interest", "score", "status", "location", "message", "budget_min", "budget_max"]];
-    (filtered ?? []).forEach((l) =>
-      rows.push([l.created_at, l.name, l.phone, l.source, l.interest, l.score, l.status, l.location, l.message.replace(/[\n,]/g, " "), String(l.budget_min ?? ""), String(l.budget_max ?? "")]),
-    );
-    const blob = new Blob([rows.map((r) => r.join(",")).join("\n")], { type: "text/csv" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "aj-leads.csv";
-    a.click();
-    URL.revokeObjectURL(url);
-  }
-
-  if (!authed) {
-    return (
-      <div>
-        <PageHero overline="Operations" title="Lead command center" description="PIN-gated view of every enquiry captured across the AI suite, shop and contact forms." />
-        <Container className="max-w-md py-16">
-          <form
-            className="rounded-2xl border border-border bg-card p-8"
-            data-testid="admin-login-form"
-            onSubmit={(e) => {
-              e.preventDefault();
-              login.mutate();
-            }}
-          >
-            <span className="flex size-10 items-center justify-center rounded-xl bg-secondary text-primary"><Lock className="size-5" /></span>
-            <h2 className="mt-4 font-heading text-xl font-semibold text-foreground">Enter the admin PIN</h2>
-            <Input
-              data-testid="admin-pin-input"
-              type="password"
-              inputMode="numeric"
-              value={pin}
-              onChange={(e) => setPin(e.target.value)}
-              placeholder="••••"
-              className="mt-4 text-center font-mono text-lg tracking-[0.4em]"
-            />
-            <Button type="submit" className="mt-4 w-full" data-testid="admin-login-button" disabled={login.isPending || !pin}>
-              {login.isPending ? "Checking…" : "Unlock dashboard"}
-            </Button>
-            <p className="mt-3 text-center text-xs text-muted-foreground">Demo PIN: 9079 — change via ADMIN_PIN in backend/.env</p>
-          </form>
-        </Container>
-      </div>
-    );
-  }
-
-  const cards = [
-    { icon: Waves, label: "Total leads", value: String(stats.total) },
-    { icon: Flame, label: "Hot", value: String(stats.hot) },
-    { icon: Sun, label: "Warm", value: String(stats.warm) },
-    { icon: Snowflake, label: "Cold", value: String(stats.cold) },
-  ];
 
   return (
     <div>
-      <PageHero overline="Operations" title="Lead command center" description="Every AI tool, quiz, proposal and contact form lands here — scored and timestamped." />
-      <Container className="py-12">
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-          {cards.map((c) => (
-            <div key={c.label} className="rounded-2xl border border-border bg-card p-5" data-testid={`admin-stat-${c.label.toLowerCase()}`}>
+      <PageHero
+        overline="Operations"
+        title="Your leads come to your inbox"
+        description="This site runs without a database — nothing is stored on the server. The moment someone submits any form or uses any AI tool, their details are emailed straight to you."
+      />
+
+      <Container className="py-14">
+        <Card className="border-primary/40 bg-secondary" data-testid="admin-destination-card">
+          <CardContent className="p-7 sm:p-9">
+            <div className="flex flex-wrap items-start justify-between gap-4">
+              <div>
+                <span className="flex size-11 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                  <MailCheck className="size-6" />
+                </span>
+                <p className="mt-4 font-mono text-[11px] uppercase tracking-[0.2em] text-primary">Lead delivery address</p>
+                <p className="mt-1 font-heading text-2xl font-semibold text-foreground sm:text-3xl" data-testid="admin-lead-email">
+                  {destination?.email ?? "loading…"}
+                </p>
+              </div>
+              <Badge
+                variant={destination?.configured ? "default" : "outline"}
+                className="mt-2"
+                data-testid="admin-email-status"
+              >
+                {destination?.configured ? "Email delivery active" : "Email not configured"}
+              </Badge>
+            </div>
+            <p className="mt-5 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+              Every lead email carries the visitor's <strong className="text-foreground">name</strong>, their{" "}
+              <strong className="text-foreground">phone number</strong> (tap to call) and{" "}
+              <strong className="text-foreground">which tool they used</strong>, timestamped in IST. Reply or call
+              straight from your inbox.
+            </p>
+          </CardContent>
+        </Card>
+
+        <div className="mt-10 grid gap-5 sm:grid-cols-3">
+          {[
+            { icon: Zap, title: "Instant", detail: "Sent the second a form is submitted — no dashboard to check, nothing to log into." },
+            { icon: ShieldCheck, title: "Nothing stored", detail: "No database, so no customer data sits on the server. Your inbox is the only record." },
+            { icon: BellRing, title: "Every source", detail: "All 8 forms and AI tools route to the same inbox, each labelled by tool." },
+          ].map((c) => (
+            <div key={c.title} className="rounded-2xl border border-border bg-card p-6" data-testid="admin-benefit-card">
               <c.icon className="size-5 text-primary" />
-              <p className="mt-3 font-heading text-3xl font-semibold text-foreground">{c.value}</p>
-              <p className="text-xs text-muted-foreground">{c.label}</p>
+              <h3 className="mt-3 font-heading text-base font-semibold text-foreground">{c.title}</h3>
+              <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{c.detail}</p>
             </div>
           ))}
-          <div className="rounded-2xl border border-primary/40 bg-secondary p-5" data-testid="admin-stat-pipeline">
-            <p className="text-xs font-medium text-primary">Revenue pipeline</p>
-            <p className="mt-2 font-heading text-2xl font-semibold text-foreground">{rupees(stats.pipeline)}</p>
-            <p className="text-xs text-muted-foreground">Sum of quoted budgets</p>
-          </div>
         </div>
 
-        <div className="mt-8 flex flex-wrap items-center justify-between gap-3">
-          <div className="flex flex-wrap gap-2" data-testid="admin-score-filter">
-            {["all", "hot", "warm", "cold"].map((s) => (
-              <button
-                key={s}
-                type="button"
-                data-testid={`admin-filter-${s}`}
-                onClick={() => setScoreFilter(s)}
-                className={
-                  badgeVariants({ variant: scoreFilter === s ? "default" : "outline" }) + " cursor-pointer capitalize"
-                }
+        <div className="mt-14">
+          <SectionHeading
+            overline="Coverage"
+            title="What triggers a lead email"
+            description="Name and phone are compulsory on every one of these, so no enquiry arrives without a way to reach the customer."
+          />
+          <div className="mt-8 grid gap-3 sm:grid-cols-2">
+            {SOURCES.map((s) => (
+              <div
+                key={s.label}
+                className="flex items-start gap-3 rounded-xl border border-border bg-card p-4"
+                data-testid="admin-source-row"
               >
-                {s}
-              </button>
+                <Inbox className="mt-0.5 size-4 shrink-0 text-primary" />
+                <div>
+                  <p className="text-sm font-medium text-foreground">{s.label}</p>
+                  <p className="text-xs text-muted-foreground">{s.detail}</p>
+                </div>
+              </div>
             ))}
           </div>
-          <div className="flex gap-2">
-            <Button variant="outline" size="sm" data-testid="admin-export-csv" className="gap-1.5" onClick={exportCsv}>
-              <Download className="size-3.5" /> Export CSV
-            </Button>
-            <Button
-              variant="ghost"
-              size="sm"
-              data-testid="admin-logout"
-              onClick={() => {
-                sessionStorage.removeItem("aj-admin-pin");
-                setAuthed(false);
-                setPin("");
-              }}
-            >
-              Lock dashboard
-            </Button>
+        </div>
+
+        <div className="mt-14 rounded-3xl bg-[#0d1b13] p-8 text-[#f4f7f4] sm:p-12">
+          <div className="max-w-2xl">
+            <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-[#8ed6b1]">Changing the address</p>
+            <h2 className="mt-3 font-heading text-2xl font-semibold sm:text-3xl">Want leads sent somewhere else?</h2>
+            <p className="mt-3 text-sm leading-relaxed text-[#c2d4c9]">
+              The destination is a single setting — <code className="rounded bg-white/10 px-1.5 py-0.5 font-mono text-[12px]">LEAD_EMAIL</code>{" "}
+              in <code className="rounded bg-white/10 px-1.5 py-0.5 font-mono text-[12px]">backend/.env</code>. Change it to any
+              address (or add a second one) and restart — no code changes needed.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <PrimaryLink to="/contact" testid="admin-test-form-link" variant="outline" className="border-[#8ed6b1]/40 text-[#8ed6b1] hover:bg-[#8ed6b1]/10 hover:text-[#8ed6b1]">
+                Send yourself a test lead
+              </PrimaryLink>
+              <WhatsAppButton
+                text="Hi AJ team, I want to change where website leads are emailed."
+                testid="admin-whatsapp-button"
+                variant="default"
+              >
+                Ask for help
+              </WhatsAppButton>
+            </div>
           </div>
         </div>
 
-        <div className="mt-4 overflow-hidden rounded-2xl border border-border bg-card" data-testid="admin-leads-table">
-          <Table>
-            <TableHeader>
-              <TableRow>
-                <TableHead>Lead</TableHead>
-                <TableHead>Source</TableHead>
-                <TableHead>Interest / message</TableHead>
-                <TableHead>Score</TableHead>
-                <TableHead>Status</TableHead>
-                <TableHead className="text-right">Dispatch</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {isPending ? (
-                <TableRow><TableCell colSpan={6} className="py-10 text-center text-muted-foreground">Loading leads…</TableCell></TableRow>
-              ) : filtered.length === 0 ? (
-                <TableRow><TableCell colSpan={6} className="py-10 text-center text-muted-foreground">No leads yet — submit any AI tool on the site and it lands here instantly.</TableCell></TableRow>
-              ) : (
-                filtered.map((l) => (
-                  <TableRow key={l.id} data-testid={`admin-lead-row-${l.id}`}>
-                    <TableCell>
-                      <p className="font-medium text-foreground">{l.name || <span className="text-muted-foreground">—</span>}</p>
-                      <p className="text-xs text-muted-foreground">{l.phone || "no phone"}</p>
-                      <p className="text-[11px] text-muted-foreground">{new Date(l.created_at).toLocaleString("en-IN", { dateStyle: "medium", timeStyle: "short" })}</p>
-                    </TableCell>
-                    <TableCell><Badge variant="secondary" className="capitalize">{l.source.replaceAll("_", " ")}</Badge></TableCell>
-                    <TableCell className="max-w-72">
-                      {l.interest ? <p className="text-sm text-foreground">{l.interest}</p> : null}
-                      {l.message ? <p className="line-clamp-2 text-xs text-muted-foreground">{l.message}</p> : null}
-                      {l.has_photo ? <Badge variant="outline" className="mt-1 text-[10px]">📷 photo attached</Badge> : null}
-                    </TableCell>
-                    <TableCell>
-                      <span className={badgeVariants({ variant: "outline" }) + " border capitalize " + (SCORE_STYLE[l.score] ?? "")} data-testid={`admin-lead-score-${l.score}`}>{l.score}</span>
-                    </TableCell>
-                    <TableCell>
-                      <Select value={l.status} onValueChange={(v) => statusMutation.mutate({ id: l.id, status: v })}>
-                        <SelectTrigger size="sm" data-testid={`admin-lead-status-${l.id}`} className="capitalize"><SelectValue /></SelectTrigger>
-                        <SelectContent>
-                          {STATUS_OPTIONS.map((s) => (<SelectItem key={s} value={s} className="capitalize">{s.replaceAll("_", " ")}</SelectItem>))}
-                        </SelectContent>
-                      </Select>
-                    </TableCell>
-                    <TableCell className="text-right">
-                      {l.phone ? (
-                        <a
-                          href={waLink(`Hello ${l.name || "there"}, this is AJ Heaven's Harvest Nursery following up on your ${l.interest || "garden enquiry"}.`)}
-                          target="_blank"
-                          rel="noreferrer"
-                          data-testid={`admin-lead-whatsapp-${l.id}`}
-                          className={badgeVariants({ variant: "secondary" }) + " cursor-pointer gap-1 text-[#206d43]"}
-                        >
-                          <MessageCircle className="size-3.5" /> WhatsApp
-                        </a>
-                      ) : (
-                        <span className="text-xs text-muted-foreground">—</span>
-                      )}
-                    </TableCell>
-                  </TableRow>
-                ))
-              )}
-            </TableBody>
-          </Table>
-        </div>
+        <p className="mt-8 text-center text-sm text-muted-foreground">
+          Looking for the website?{" "}
+          <Link to="/" className="font-medium text-primary hover:underline" data-testid="admin-home-link">
+            Back to the nursery
+          </Link>
+        </p>
       </Container>
     </div>
   );

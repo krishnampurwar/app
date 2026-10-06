@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { MapPin } from "lucide-react";
-import { apiGet } from "@/lib/api";
+import { getLocations } from "@/lib/content";
 import type { LocationPage } from "@/lib/types";
 import { Container, PageHero, SectionHeading, SkeletonGrid } from "@/components/Shared";
 import { badgeVariants } from "@/components/ui/badge";
 
 export default function Locations() {
-  const { data: locations } = useQuery({ queryKey: ["locations"], queryFn: () => apiGet<LocationPage[]>("/locations") });
+  const { data: locations } = useQuery({ queryKey: ["locations"], queryFn: getLocations });
 
   return (
     <div>

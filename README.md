@@ -1,3 +1,14 @@
+> **⚠️ STACK CHANGED — this README's FastAPI/Mongo sections are historical.**
+>
+> This app now runs **Node.js 20 + Express** (`backend/server.js`, started by supervisor as
+> `node --watch server.js`) with **no database**. All catalog/service/location/project/plan content is
+> static JSON in `frontend/public/data/`, fetched via `frontend/src/lib/content.ts`. The backend holds
+> **AI logic + lead email only**; every lead is emailed to `LEAD_EMAIL` instead of being stored.
+>
+> Read **`memory/SPEC.md`** for the current architecture and **`DEPLOY_HOSTINGER.md`** for deployment.
+> The frontend half of this README (Vite, TanStack Query, typed fetch in `src/lib/api.ts`, `yarn typecheck`)
+> is still accurate.
+
 # farm-ts
 
 Minimal split backend/frontend starter: **FastAPI + MongoDB** behind a

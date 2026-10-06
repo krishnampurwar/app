@@ -1,7 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { ChevronDown, ClipboardList, MessageCircle, Sparkles, Sun, Sprout, Wind } from "lucide-react";
-import { apiGet } from "@/lib/api";
+import { getLocation, getLocations } from "@/lib/content";
 import type { LocationPage } from "@/lib/types";
 import { Container, ErrorState, PrimaryLink, SectionHeading, WhatsAppButton } from "@/components/Shared";
 import { Card, CardContent } from "@/components/ui/card";
@@ -14,9 +14,9 @@ export default function LocationDetail() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const { data: loc, error } = useQuery({
     queryKey: ["location", slug],
-    queryFn: () => apiGet<LocationPage>(`/locations/${slug}`),
+    queryFn: () => getLocation(slug ?? ""),
   });
-  const { data: all } = useQuery({ queryKey: ["locations"], queryFn: () => apiGet<LocationPage[]>("/locations") });
+  const { data: all } = useQuery({ queryKey: ["locations"], queryFn: getLocations });
 
   if (error) {
     return (

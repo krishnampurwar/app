@@ -175,8 +175,6 @@ export default function AiPlantDoctor() {
           <div className="mt-5">
             <LeadForm
               source="plant_doctor"
-              interest="Plant doctor home visit (₹499)"
-              message={diagnosis ? `Visit for: ${diagnosis.problem} (${diagnosis.severity})` : "Plant doctor home visit"}
               testid="doctor-lead"
               submitLabel="Confirm visit request"
               onSuccess={() => setBookOpen(false)}

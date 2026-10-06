@@ -84,38 +84,22 @@ export interface Plan {
   popular: boolean;
 }
 
-export interface LeadCreate {
-  name?: string;
-  phone?: string;
-  email?: string;
-  source: string;
-  interest?: string;
-  location?: string;
-  property_type?: string;
-  area_sqft?: number | null;
-  budget_min?: number | null;
-  budget_max?: number | null;
-  message?: string;
-  has_photo?: boolean;
-}
-
-export interface Lead {
-  id: string;
+export interface LeadSubmit {
   name: string;
   phone: string;
-  email: string;
   source: string;
-  interest: string;
-  location: string;
-  property_type: string;
-  area_sqft: number | null;
-  budget_min: number | null;
-  budget_max: number | null;
-  message: string;
-  has_photo: boolean;
-  score: "hot" | "warm" | "cold";
-  status: "new" | "in_progress" | "converted" | "closed";
-  created_at: string;
+}
+
+export interface LeadResponse {
+  ok: boolean;
+  delivered: boolean;
+  tool: string;
+}
+
+export interface LeadDestination {
+  email: string;
+  masked: string;
+  configured: boolean;
 }
 
 export interface Diagnosis {

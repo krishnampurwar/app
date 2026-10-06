@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { ArrowRight } from "lucide-react";
-import { apiGet } from "@/lib/api";
+import { getServices } from "@/lib/content";
 import type { Service } from "@/lib/types";
 import { Container, PageHero, SectionHeading, SkeletonGrid, WhatsAppButton, rupees } from "@/components/Shared";
 import { HERO_IMAGE } from "@/pages/imagePool";
 
 export default function Services() {
-  const { data: services } = useQuery({ queryKey: ["services"], queryFn: () => apiGet<Service[]>("/services") });
+  const { data: services } = useQuery({ queryKey: ["services"], queryFn: getServices });
 
   return (
     <div>

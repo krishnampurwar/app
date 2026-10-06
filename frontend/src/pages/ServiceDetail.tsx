@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { ArrowRight, Check, ChevronDown, ClipboardCheck, MessageCircle, Sparkles } from "lucide-react";
-import { apiGet } from "@/lib/api";
+import { getService } from "@/lib/content";
 import type { Service } from "@/lib/types";
 import { Container, ErrorState, PrimaryLink, SectionHeading, WhatsAppButton, rupees } from "@/components/Shared";
 import { Button } from "@/components/ui/button";
@@ -14,7 +14,7 @@ export default function ServiceDetail() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const { data: service, error } = useQuery({
     queryKey: ["service", slug],
-    queryFn: () => apiGet<Service>(`/services/${slug}`),
+    queryFn: () => getService(slug ?? ""),
   });
 
   if (error) {

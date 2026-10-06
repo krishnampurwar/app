@@ -11,7 +11,7 @@ import {
   Stethoscope,
   Wand2,
 } from "lucide-react";
-import { apiGet } from "@/lib/api";
+import { getPlans, getPlants, getProjects, getServices } from "@/lib/content";
 import type { Plan, Plant, Project, Service } from "@/lib/types";
 import { Container, PageHero, PrimaryLink, SectionHeading, SkeletonGrid, WhatsAppButton, rupees } from "@/components/Shared";
 import { badgeVariants } from "@/components/ui/badge";
@@ -28,10 +28,10 @@ const AI_TOOLS = [
 ];
 
 export default function Home() {
-  const { data: services } = useQuery({ queryKey: ["services"], queryFn: () => apiGet<Service[]>("/services") });
-  const { data: plants } = useQuery({ queryKey: ["plants", "featured"], queryFn: () => apiGet<Plant[]>("/plants?category=indoor") });
-  const { data: plans } = useQuery({ queryKey: ["plans"], queryFn: () => apiGet<Plan[]>("/plans") });
-  const { data: projects } = useQuery({ queryKey: ["projects"], queryFn: () => apiGet<Project[]>("/projects") });
+  const { data: services } = useQuery({ queryKey: ["services"], queryFn: getServices });
+  const { data: plants } = useQuery({ queryKey: ["plants", "featured"], queryFn: getPlants });
+  const { data: plans } = useQuery({ queryKey: ["plans"], queryFn: getPlans });
+  const { data: projects } = useQuery({ queryKey: ["projects"], queryFn: getProjects });
 
   return (
     <div>

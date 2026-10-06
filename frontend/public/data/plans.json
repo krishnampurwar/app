@@ -1,0 +1,52 @@
+[
+  {
+    "slug": "basic",
+    "cadence": "per month · 1 visit",
+    "features": [
+      "Monthly gardener visit (up to 2 hrs)",
+      "Pruning, feeding & pest scouting",
+      "22-point health report on WhatsApp",
+      "10% off nursery plants all year",
+      "Free replacement: up to 3 plants/month"
+    ],
+    "name": "Basic Care",
+    "popular": false,
+    "price": 1499,
+    "tagline": "Keep a healthy garden healthy.",
+    "id": "basic"
+  },
+  {
+    "slug": "premium",
+    "cadence": "per month · 2 visits",
+    "features": [
+      "Bi-weekly gardener visits",
+      "Everything in Basic Care",
+      "Irrigation & timer maintenance",
+      "Seasonal replanting (2 cycles/year)",
+      "Free replacement: up to 6 plants/month",
+      "Priority WhatsApp SLA (12 hrs)"
+    ],
+    "name": "Premium Care",
+    "popular": true,
+    "price": 2999,
+    "tagline": "Bi-weekly care for gardens that host.",
+    "id": "premium"
+  },
+  {
+    "slug": "complete",
+    "cadence": "per month · weekly",
+    "features": [
+      "Weekly gardener visits",
+      "Everything in Premium Care",
+      "Pest & fungus management included",
+      "Unlimited plant replacement (fair-use)",
+      "Lawn care & hedge sculpting",
+      "Named lead gardener + quarterly review"
+    ],
+    "name": "Complete Care",
+    "popular": false,
+    "price": 5999,
+    "tagline": "Full-service luxury: garden + plants, guaranteed.",
+    "id": "complete"
+  }
+]

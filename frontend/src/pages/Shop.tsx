@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { MessageCircle, Search, ShoppingCart } from "lucide-react";
-import { apiGet } from "@/lib/api";
+import { getFilteredPlants } from "@/lib/content";
 import type { Plant } from "@/lib/types";
 import { Container, PageHero, SectionHeading, SkeletonGrid, WhatsAppButton, rupees } from "@/components/Shared";
 import { Button, buttonVariants } from "@/components/ui/button";
@@ -50,16 +50,17 @@ export default function Shop() {
   const [placement, setPlacement] = useState("all");
   const [selected, setSelected] = useState<Plant | null>(null);
 
-  const params = new URLSearchParams();
-  if (category !== "all") params.set("category", category);
-  if (sunlight !== "all") params.set("sunlight", sunlight);
-  if (maintenance !== "all") params.set("maintenance", maintenance);
-  if (placement !== "all") params.set("location", placement);
-  if (search.trim()) params.set("search", search.trim());
+  const filters = {
+    category: category === "all" ? undefined : category,
+    sunlight: sunlight === "all" ? undefined : sunlight,
+    maintenance: maintenance === "all" ? undefined : maintenance,
+    location: placement === "all" ? undefined : placement,
+    search: search.trim() || undefined,
+  };
 
   const { data: plants, isPending } = useQuery({
-    queryKey: ["plants", params.toString()],
-    queryFn: () => apiGet<Plant[]>(`/plants?${params.toString()}`),
+    queryKey: ["plants", filters],
+    queryFn: () => getFilteredPlants(filters),
   });
 
   return (

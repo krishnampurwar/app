@@ -1,0 +1,21 @@
+{
+  "name": "aj-nursery-api",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "AI + lead-email API for AJ Heaven's Harvest Nursery. Stateless: no database.",
+  "main": "server.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "sharp": "^0.34.2"
+  }
+}

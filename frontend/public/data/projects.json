@@ -1,0 +1,98 @@
+[
+  {
+    "title": "Penthouse Rooftop Retreat — The Magnolias",
+    "area": "1,400 sq ft",
+    "budget_band": "₹4.5-6L",
+    "category": "Rooftop Garden",
+    "duration": "18 days",
+    "highlights": [
+      "Pergola + shade sail for June afternoons",
+      "Automated drip with rain sensor",
+      "Seating for 10 with embedded lighting"
+    ],
+    "image_url": "https://images.unsplash.com/photo-1776363284806-873eeef565a7?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "location": "DLF Phase 5",
+    "summary": "A 1,400 sq ft penthouse terrace turned into an all-season retreat: pergola shade, artificial lawn, wind-hardy planters and evening lighting — built weight-safe over existing waterproofing.",
+    "id": "penthouse-rooftop-retreat-the-magnolias"
+  },
+  {
+    "title": "Corporate Lobby Green Wall",
+    "area": "180 sq ft wall",
+    "budget_band": "₹1.6-2.2L",
+    "category": "Vertical Garden",
+    "duration": "5 days",
+    "highlights": [
+      "26 species per-panel planting plan",
+      "Zero-drip leak design for indoors",
+      "Monthly grooming AMC"
+    ],
+    "image_url": "https://images.unsplash.com/photo-1764705639956-801d5b6ef197?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "location": "Golf Course Road",
+    "summary": "A 180 sq ft indoor living wall in a corporate lobby — low-light foliage on a hidden drip, whisper-quiet pump, grow-lit through the foggy winter weeks.",
+    "id": "corporate-lobby-green-wall"
+  },
+  {
+    "title": "Biophilic Office Floor Refresh",
+    "area": "6,000 sq ft floor",
+    "budget_band": "₹95k",
+    "category": "Indoor Landscaping",
+    "duration": "2 days",
+    "highlights": [
+      "Light-mapped placement plan",
+      "Self-watering planters throughout",
+      "Monthly corporate grooming visit"
+    ],
+    "image_url": "https://images.unsplash.com/photo-1626965654957-fef1cb80d4b7?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "location": "One Horizon Center",
+    "summary": "34 workstations, 5 meeting rooms, zero windows. ZZ, snake and pothos palettes with discreet grow lights — plus a 30-day swap guarantee that never needed using.",
+    "id": "biophilic-office-floor-refresh"
+  },
+  {
+    "title": "Villa Estate Garden Revival",
+    "area": "2,000 sq ft",
+    "budget_band": "₹5-7L",
+    "category": "Outdoor Landscaping",
+    "duration": "4 weeks",
+    "highlights": [
+      "Soil rebuild + organic revival",
+      "Walkway & fire-pit hardscape",
+      "Fruiting trees in monsoon window"
+    ],
+    "image_url": "https://images.unsplash.com/photo-1585663865555-a78a1411f45b?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "location": "Nirvana Country",
+    "summary": "A neglected 2,000 sq ft villa garden revived in one season: hard-pruned borders, rebuilt lawn, new walkway and a mango-chikoo corner planted in monsoon.",
+    "id": "villa-estate-garden-revival"
+  },
+  {
+    "title": "High-Rise Balcony Makeover",
+    "area": "120 sq ft",
+    "budget_band": "₹65k",
+    "category": "Balcony Garden",
+    "duration": "1 day",
+    "highlights": [
+      "Wind-picked flowering palette",
+      "Rail-mounted planters, no drilling",
+      "Self-watering for travel weeks"
+    ],
+    "image_url": "https://images.unsplash.com/photo-1765558290832-f50b7fab8f36?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "location": "M3M Golfestate",
+    "summary": "A windy 22nd-floor balcony turned into a flowering morning nook — clip-on green rail, wind-hardy species and a herb corner that survives the gusts.",
+    "id": "high-rise-balcony-makeover"
+  },
+  {
+    "title": "Terrace Kitchen Garden",
+    "area": "600 sq ft",
+    "budget_band": "₹1.2-1.8L",
+    "category": "Rooftop Garden",
+    "duration": "9 days",
+    "highlights": [
+      "16 grow-bags + trellis grid",
+      "Timer drip, 20 min/day",
+      "Seasonal sowing calendar provided"
+    ],
+    "image_url": "https://images.unsplash.com/photo-1543812226-32a17800526b?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "location": "South City 2",
+    "summary": "A family terrace re-zoned into a productive kitchen garden — 16 grow-bags, trellised climbers, drip on a timer, and herbs by the kitchen door.",
+    "id": "terrace-kitchen-garden"
+  }
+]

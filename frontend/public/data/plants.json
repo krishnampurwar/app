@@ -1,0 +1,533 @@
+[
+  {
+    "slug": "tulsi-holy-basil",
+    "badges": [
+      "hardy"
+    ],
+    "category": "herb",
+    "description": "The sacred basil every Gurgaon courtyard deserves — aromatic, medicinal and effortless.",
+    "image_url": "https://images.unsplash.com/photo-1781819856713-5ff9f5353464?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "locations": [
+      "terrace",
+      "garden",
+      "balcony"
+    ],
+    "maintenance": "low",
+    "name": "Tulsi (Holy Basil)",
+    "price": 199,
+    "sunlight": "direct",
+    "tags": [
+      "medicinal",
+      "vastu"
+    ],
+    "id": "tulsi-holy-basil"
+  },
+  {
+    "slug": "lucky-bamboo",
+    "badges": [
+      "pet_safe",
+      "night_oxygen"
+    ],
+    "category": "indoor",
+    "description": "Grows in water, tolerates fluorescent light and survives long office weekends. A classic gift and desk plant.",
+    "image_url": "https://images.unsplash.com/photo-1619423089884-bc5b70bc4e2c?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "locations": [
+      "bedroom",
+      "office",
+      "living_room"
+    ],
+    "maintenance": "low",
+    "name": "Lucky Bamboo (Dracaena)",
+    "price": 299,
+    "sunlight": "low",
+    "tags": [
+      "vastu",
+      "gift"
+    ],
+    "id": "lucky-bamboo"
+  },
+  {
+    "slug": "echeveria-rosette",
+    "badges": [],
+    "category": "succulent",
+    "description": "Geometric rosettes in dusty pastels. Perfect windowsill succulent for bright desks.",
+    "image_url": "https://images.pexels.com/photos/7208488/pexels-photo-7208488.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "locations": [
+      "balcony",
+      "office",
+      "bedroom"
+    ],
+    "maintenance": "low",
+    "name": "Echeveria Rosette",
+    "price": 299,
+    "sunlight": "direct",
+    "tags": [
+      "desk"
+    ],
+    "id": "echeveria-rosette"
+  },
+  {
+    "slug": "golden-barrel-cactus",
+    "badges": [
+      "hardy"
+    ],
+    "category": "succulent",
+    "description": "Practically indestructible in Gurgaon's 45°C summers. Water once a fortnight and it glows.",
+    "image_url": "https://images.unsplash.com/photo-1613372998667-b83ab5bbe081?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "locations": [
+      "balcony",
+      "office",
+      "terrace"
+    ],
+    "maintenance": "low",
+    "name": "Golden Barrel Cactus",
+    "price": 349,
+    "sunlight": "direct",
+    "tags": [
+      "desert"
+    ],
+    "id": "golden-barrel-cactus"
+  },
+  {
+    "slug": "boston-fern",
+    "badges": [
+      "air_purifying",
+      "pet_safe"
+    ],
+    "category": "indoor",
+    "description": "Feathery fronds that love Gurgaon's monsoon humidity and quietly raise humidity in air-conditioned rooms.",
+    "image_url": "https://images.unsplash.com/photo-1604866830513-d54766457f45?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "locations": [
+      "balcony",
+      "living_room"
+    ],
+    "maintenance": "medium",
+    "name": "Boston Fern Collection",
+    "price": 399,
+    "sunlight": "medium",
+    "tags": [
+      "fern",
+      "humidifier"
+    ],
+    "id": "boston-fern"
+  },
+  {
+    "slug": "jade-plant",
+    "badges": [
+      "hardy"
+    ],
+    "category": "succulent",
+    "description": "The prosperity plant. A thick-trunked succulent that lives for decades with almost no care.",
+    "image_url": "https://images.unsplash.com/photo-1771164042535-2ca252201c7a?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "locations": [
+      "balcony",
+      "office",
+      "living_room"
+    ],
+    "maintenance": "low",
+    "name": "Jade Plant",
+    "price": 449,
+    "sunlight": "direct",
+    "tags": [
+      "vastu",
+      "gift"
+    ],
+    "id": "jade-plant"
+  },
+  {
+    "slug": "hibiscus",
+    "badges": [
+      "flowering"
+    ],
+    "category": "flowering",
+    "description": "Loud, tropical and made for Delhi NCR summers — daily blooms that butterflies queue for.",
+    "image_url": "https://images.unsplash.com/photo-1781819856713-5ff9f5353464?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "locations": [
+      "terrace",
+      "garden",
+      "balcony"
+    ],
+    "maintenance": "medium",
+    "name": "Hibiscus (Gudhal)",
+    "price": 499,
+    "sunlight": "direct",
+    "tags": [
+      "summer"
+    ],
+    "id": "hibiscus"
+  },
+  {
+    "slug": "euphorbia-cactus",
+    "badges": [
+      "hardy"
+    ],
+    "category": "succulent",
+    "description": "A sculptural column cactus for sunny balconies — dramatic height without the drama.",
+    "image_url": "https://images.unsplash.com/photo-1788145748892-86bdf8b1139d?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "locations": [
+      "balcony",
+      "terrace"
+    ],
+    "maintenance": "low",
+    "name": "Tall Euphorbia Cactus",
+    "price": 599,
+    "sunlight": "direct",
+    "tags": [
+      "desert",
+      "statement"
+    ],
+    "id": "euphorbia-cactus"
+  },
+  {
+    "slug": "geranium-combo",
+    "badges": [
+      "flowering"
+    ],
+    "category": "flowering",
+    "description": "Gurgaon's winter balcony hero — reds and pinks that bloom from November to March.",
+    "image_url": "https://images.unsplash.com/photo-1761594521497-09c98039d761?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "locations": [
+      "balcony",
+      "terrace"
+    ],
+    "maintenance": "medium",
+    "name": "Geranium Colour Combo",
+    "price": 599,
+    "sunlight": "direct",
+    "tags": [
+      "winter",
+      "combo"
+    ],
+    "id": "geranium-combo"
+  },
+  {
+    "slug": "mint-herb-kitchen-kit",
+    "badges": [
+      "hardy"
+    ],
+    "category": "herb",
+    "description": "Mint, coriander, curry leaf and tulsi in nursery pots — pluck-and-cook herbs steps from the kitchen.",
+    "image_url": "https://images.unsplash.com/photo-1765558290832-f50b7fab8f36?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "locations": [
+      "balcony",
+      "terrace"
+    ],
+    "maintenance": "low",
+    "name": "Kitchen Herb Kit",
+    "price": 599,
+    "sunlight": "medium",
+    "tags": [
+      "edible"
+    ],
+    "id": "mint-herb-kitchen-kit"
+  },
+  {
+    "slug": "areca-palm",
+    "badges": [
+      "air_purifying",
+      "pet_safe",
+      "night_oxygen"
+    ],
+    "category": "indoor",
+    "description": "The best large palm for Delhi NCR homes — humidity-loving, pet-safe and an excellent dust trapper in smog season.",
+    "image_url": "https://images.unsplash.com/photo-1711477300788-9f0ef313091d?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "locations": [
+      "balcony",
+      "living_room",
+      "terrace"
+    ],
+    "maintenance": "low",
+    "name": "Areca Palm",
+    "price": 699,
+    "sunlight": "medium",
+    "tags": [
+      "palm",
+      "large"
+    ],
+    "id": "areca-palm"
+  },
+  {
+    "slug": "succulent-bowl-trio",
+    "badges": [],
+    "category": "succulent",
+    "description": "Three hand-planted succulents in a stoneware bowl — a ready-made centrepiece or gift.",
+    "image_url": "https://images.pexels.com/photos/36620948/pexels-photo-36620948.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "locations": [
+      "balcony",
+      "office"
+    ],
+    "maintenance": "low",
+    "name": "Succulent Bowl Trio",
+    "price": 799,
+    "sunlight": "direct",
+    "tags": [
+      "combo",
+      "gift"
+    ],
+    "id": "succulent-bowl-trio"
+  },
+  {
+    "slug": "monstera-deliciosa",
+    "badges": [
+      "air_purifying"
+    ],
+    "category": "indoor",
+    "description": "The iconic split-leaf philodendron — a bold tropical statement that thrives in Gurgaon's bright indirect light. Instant jungle energy for living rooms and office corners.",
+    "image_url": "https://images.unsplash.com/photo-1614594975525-e45190c55d0b?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "locations": [
+      "living_room",
+      "balcony",
+      "office"
+    ],
+    "maintenance": "medium",
+    "name": "Monstera Deliciosa",
+    "price": 899,
+    "sunlight": "medium",
+    "tags": [
+      "tropical",
+      "statement"
+    ],
+    "id": "monstera-deliciosa"
+  },
+  {
+    "slug": "adenium-desert-rose",
+    "badges": [
+      "flowering",
+      "hardy"
+    ],
+    "category": "flowering",
+    "description": "A swollen caudex and shocking-pink blooms — the ideal 'looks exotic, needs little' terrace plant.",
+    "image_url": "https://images.unsplash.com/photo-1705776859776-b8e5c84ca158?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "locations": [
+      "balcony",
+      "terrace"
+    ],
+    "maintenance": "low",
+    "name": "Adenium (Desert Rose)",
+    "price": 899,
+    "sunlight": "direct",
+    "tags": [
+      "bonsai-like"
+    ],
+    "id": "adenium-desert-rose"
+  },
+  {
+    "slug": "hanging-basket-collection",
+    "badges": [
+      "flowering"
+    ],
+    "category": "flowering",
+    "description": "Trailing lobelia, petunia and ivy in coir-lined baskets — instant colour at eye level.",
+    "image_url": "https://images.unsplash.com/photo-1765775585873-868ae680fc26?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "locations": [
+      "balcony",
+      "terrace"
+    ],
+    "maintenance": "medium",
+    "name": "Hanging Basket Collection",
+    "price": 999,
+    "sunlight": "direct",
+    "tags": [
+      "combo"
+    ],
+    "id": "hanging-basket-collection"
+  },
+  {
+    "slug": "split-leaf-philodendron",
+    "badges": [
+      "air_purifying",
+      "hardy"
+    ],
+    "category": "indoor",
+    "description": "Architectural foliage that forgives missed waterings. One of the easiest large-leaf plants for Gurgaon apartments.",
+    "image_url": "https://images.unsplash.com/photo-1525498128493-380d1990a112?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "locations": [
+      "living_room",
+      "office"
+    ],
+    "maintenance": "low",
+    "name": "Split-Leaf Philodendron",
+    "price": 1299,
+    "sunlight": "medium",
+    "tags": [
+      "tropical"
+    ],
+    "id": "split-leaf-philodendron"
+  },
+  {
+    "slug": "desert-rose-balcony-set",
+    "badges": [
+      "flowering"
+    ],
+    "category": "flowering",
+    "description": "Five pre-styled flowering pots tuned to your balcony's sun — installed by our team, blooming in week one.",
+    "image_url": "https://images.unsplash.com/photo-1772544547403-054bbff0a7dc?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "locations": [
+      "balcony",
+      "garden"
+    ],
+    "maintenance": "medium",
+    "name": "Balcony Blooms Set",
+    "price": 1499,
+    "sunlight": "direct",
+    "tags": [
+      "combo"
+    ],
+    "id": "desert-rose-balcony-set"
+  },
+  {
+    "slug": "ginseng-ficus-bonsai",
+    "badges": [
+      "rare",
+      "hardy"
+    ],
+    "category": "bonsai",
+    "description": "Fat aerial roots, tiny leaves, forgiving nature — the best first bonsai for offices and bedrooms.",
+    "image_url": "https://images.unsplash.com/photo-1467043198406-dc953a3defa0?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "locations": [
+      "office",
+      "living_room"
+    ],
+    "maintenance": "low",
+    "name": "Ginseng Ficus Bonsai",
+    "price": 1499,
+    "sunlight": "low",
+    "tags": [
+      "beginner"
+    ],
+    "id": "ginseng-ficus-bonsai"
+  },
+  {
+    "slug": "plumeria-frangipani",
+    "badges": [
+      "flowering"
+    ],
+    "category": "outdoor",
+    "description": "Temple-frangipani in white and pink. Drought-hardy once established — ideal farmhouse tree.",
+    "image_url": "https://images.unsplash.com/photo-1585663865555-a78a1411f45b?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "locations": [
+      "terrace",
+      "garden"
+    ],
+    "maintenance": "medium",
+    "name": "Plumeria (Frangipani)",
+    "price": 1499,
+    "sunlight": "direct",
+    "tags": [
+      "fragrant",
+      "tree"
+    ],
+    "id": "plumeria-frangipani"
+  },
+  {
+    "slug": "ficus-bonsai-5yr",
+    "badges": [
+      "rare"
+    ],
+    "category": "bonsai",
+    "description": "A five-year S-shaped ficus with a hardened trunk — the classic bonsai silhouette, trained in our nursery.",
+    "image_url": "https://images.unsplash.com/photo-1526397751294-331021109fbd?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "locations": [
+      "living_room",
+      "office"
+    ],
+    "maintenance": "medium",
+    "name": "Ficus Bonsai (5 Year)",
+    "price": 2499,
+    "sunlight": "medium",
+    "tags": [
+      "gift",
+      "rare"
+    ],
+    "id": "ficus-bonsai-5yr"
+  },
+  {
+    "slug": "banyan-bonsai",
+    "badges": [
+      "rare"
+    ],
+    "category": "bonsai",
+    "description": "Aerial-rooted grandeur in miniature — our most photographed bonsai.",
+    "image_url": "https://images.unsplash.com/photo-1512428813834-c702c7702b78?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "locations": [
+      "living_room",
+      "office"
+    ],
+    "maintenance": "medium",
+    "name": "Banyan Style Bonsai",
+    "price": 2999,
+    "sunlight": "medium",
+    "tags": [
+      "rare",
+      "large"
+    ],
+    "id": "banyan-bonsai"
+  },
+  {
+    "slug": "office-green-combo",
+    "badges": [
+      "air_purifying",
+      "hardy"
+    ],
+    "category": "indoor",
+    "description": "Low-light survivors (ZZ, snake, pothos) styled for cabins and lobbies. Survives AC, weekends and meetings.",
+    "image_url": "https://images.unsplash.com/photo-1626965654957-fef1cb80d4b7?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "locations": [
+      "office"
+    ],
+    "maintenance": "low",
+    "name": "Office Green Combo",
+    "price": 3499,
+    "sunlight": "low",
+    "tags": [
+      "combo",
+      "corporate"
+    ],
+    "id": "office-green-combo"
+  },
+  {
+    "slug": "japanese-maple-bonsai",
+    "badges": [
+      "rare"
+    ],
+    "category": "bonsai",
+    "description": "Lace-leaf acer with autumn crimson. A collector's piece for protected balconies.",
+    "image_url": "https://images.unsplash.com/photo-1641412722397-3be359096577?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "locations": [
+      "balcony",
+      "terrace"
+    ],
+    "maintenance": "high",
+    "name": "Japanese Maple Bonsai",
+    "price": 3999,
+    "sunlight": "medium",
+    "tags": [
+      "rare",
+      "collector"
+    ],
+    "id": "japanese-maple-bonsai"
+  },
+  {
+    "slug": "rare-exotic-collectors-bundle",
+    "badges": [
+      "rare",
+      "air_purifying"
+    ],
+    "category": "indoor",
+    "description": "Five collector-grade foliage plants (variegated monsteras, alocasias, philodendrons) with a care card — restocked weekly.",
+    "image_url": "https://images.unsplash.com/photo-1683994851774-6e9642fb8a95?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "locations": [
+      "living_room",
+      "office"
+    ],
+    "maintenance": "medium",
+    "name": "Rare Exotic Collector's Bundle",
+    "price": 4999,
+    "sunlight": "medium",
+    "tags": [
+      "rare",
+      "combo"
+    ],
+    "id": "rare-exotic-collectors-bundle"
+  }
+]

@@ -1,0 +1,562 @@
+[
+  {
+    "slug": "garden-maintenance",
+    "description": [
+      "A garden in Gurgaon is a living system fighting 46°C summers, hard water and monsoon washouts. Our maintenance crews handle pruning, feeding, pest scouting, irrigation tuning and seasonal replanting so your landscape only gets better every month.",
+      "Every visit follows a 22-point health checklist, and you get a photo report on WhatsApp the same day. Plants that fail within the plan's guarantee window are replaced free."
+    ],
+    "faqs": [
+      {
+        "q": "How often should my garden be maintained in Gurgaon?",
+        "a": "Weekly in summer and monsoon, bi-weekly in winter keeps most gardens peak. We recommend the cadence after the free audit."
+      },
+      {
+        "q": "Do you bring your own tools and fertiliser?",
+        "a": "Yes — crews arrive fully equipped with organic feeds, sprays and tools. You only provide water access."
+      },
+      {
+        "q": "Can you take over a neglected garden?",
+        "a": "Absolutely. Revival visits start with a hard prune, soil rebuild and replacement plan, usually visible recovery in 4-6 weeks."
+      },
+      {
+        "q": "Is there a lock-in?",
+        "a": "No lock-in on Basic; Premium and Complete run on 3-month cycles with a free replanting credit each cycle."
+      }
+    ],
+    "features": [
+      "22-point plant health audit per visit",
+      "Seasonal pruning, shaping & deadheading",
+      "Organic pest & fungus management",
+      "Drip irrigation tuning & timer checks",
+      "Free replacement within guarantee window",
+      "Photo report on WhatsApp after every visit"
+    ],
+    "hero_image": "https://images.unsplash.com/photo-1599334064100-4d3a0cc7332c?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "name": "Garden Maintenance",
+    "price_from": 1499,
+    "process": [
+      {
+        "title": "Garden audit",
+        "detail": "Soil, light, irrigation and plant-by-plant health mapping in the first visit."
+      },
+      {
+        "title": "Care calendar",
+        "detail": "A month-by-month plan tuned to your garden's exposure and your schedule."
+      },
+      {
+        "title": "Scheduled visits",
+        "detail": "Weekly, bi-weekly or monthly crew visits with a named lead gardener."
+      },
+      {
+        "title": "Report & replace",
+        "detail": "Same-day WhatsApp report; anything under guarantee is replaced free."
+      }
+    ],
+    "short": "Weekly and bi-weekly care crews that keep every garden photo-ready through Gurgaon's seasons.",
+    "stats": [
+      {
+        "label": "Gardens under care",
+        "value": "180+"
+      },
+      {
+        "label": "Avg. recovery time",
+        "value": "4-6 weeks"
+      },
+      {
+        "label": "Response SLA",
+        "value": "24 hrs"
+      }
+    ],
+    "id": "garden-maintenance"
+  },
+  {
+    "slug": "plant-nursery",
+    "description": [
+      "Our Gurgaon nursery grows and hardens off plants for local conditions, so what you buy survives your balcony, not just ours. Indoor foliage, flowering shrubs, bonsai, herbs, fruit and rare collector plants — all nursery-direct pricing.",
+      "Walk in for free plant-doctor advice, repotting service and honest light-matching: we will happily talk you out of a plant that won't survive your corridor."
+    ],
+    "faqs": [
+      {
+        "q": "Where exactly is the nursery?",
+        "a": "We're in Gurgaon with same-day delivery across DLF, Golf Course Road, Sohna Road and New Gurgaon — WhatsApp us for directions and today's stock."
+      },
+      {
+        "q": "Do you deliver and install?",
+        "a": "Yes, same-day within Gurgaon, with potting and placement done by our crew for orders above ₹2,000."
+      },
+      {
+        "q": "Can I reserve plants on WhatsApp?",
+        "a": "Send us your list — we photo-confirm stock and hold it for 24 hours."
+      },
+      {
+        "q": "What if a plant dies?",
+        "a": "Within 14 days, with a photo, we replace it free. Beyond that, bring it to the plant doctor clinic for a diagnosis."
+      }
+    ],
+    "features": [
+      "500+ varieties acclimatised to NCR",
+      "Free repotting & soil mixing service",
+      "Rare & collector plants restocked weekly",
+      "Same-day local delivery in Gurgaon",
+      "14-day establishment guarantee",
+      "Free light-matching advice at the counter"
+    ],
+    "hero_image": "https://images.unsplash.com/photo-1683994851774-6e9642fb8a95?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "name": "Plant Nursery",
+    "price_from": 199,
+    "process": [
+      {
+        "title": "Tell us your space",
+        "detail": "Balcony, bedroom, terrace or office — we map light and wind first."
+      },
+      {
+        "title": "Match & pick",
+        "detail": "We shortlist plants that genuinely thrive in those conditions."
+      },
+      {
+        "title": "Pot & prep",
+        "detail": "Free repotting, soil mix and starter feed before you leave."
+      },
+      {
+        "title": "Establish & support",
+        "detail": "14-day guarantee plus WhatsApp support for the settling-in period."
+      }
+    ],
+    "short": "A living catalogue of 500+ varieties — acclimatised to NCR, priced nursery-direct.",
+    "stats": [
+      {
+        "label": "Varieties in stock",
+        "value": "500+"
+      },
+      {
+        "label": "Establishment guarantee",
+        "value": "14 days"
+      },
+      {
+        "label": "Same-day delivery",
+        "value": "Gurgaon"
+      }
+    ],
+    "id": "plant-nursery"
+  },
+  {
+    "slug": "landscaping",
+    "description": [
+      "From villa front yards to farmhouse estates, we build complete landscapes — hardscape first (paths, decks, pergolas, water features), then irrigation and lighting, then layered planting that matures gracefully.",
+      "One team owns the whole build with a fixed timeline and a warranty on both hardscape and planting. You get 3D concepts before a single stone is laid."
+    ],
+    "faqs": [
+      {
+        "q": "What does landscaping cost per sq ft in Gurgaon?",
+        "a": "Basic landscaping runs ₹150-300/sqft; premium builds with hardscape and automation ₹500-900/sqft. We itemise every rupee in the BOQ."
+      },
+      {
+        "q": "How long does a villa garden take?",
+        "a": "Typical 1,500 sqft villa garden: 3-5 weeks end-to-end including civil work."
+      },
+      {
+        "q": "Do you handle drainage and waterproofing?",
+        "a": "Yes — terrace and podium gardens include drainage layers and root barriers as standard scope."
+      },
+      {
+        "q": "Can work happen in phases?",
+        "a": "Yes. Many clients build hardscape first and add planting zones across seasons."
+      }
+    ],
+    "features": [
+      "3D concept + master layout plan",
+      "Civil, decking, pergolas & water features",
+      "Automated drip & sprinkler systems",
+      "Landscape lighting & night-time design",
+      "Layered planting with maturity plan",
+      "1-year hardscape warranty"
+    ],
+    "hero_image": "https://images.unsplash.com/photo-1585663865555-a78a1411f45b?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "name": "Landscaping & Hardscaping",
+    "price_from": 150000,
+    "process": [
+      {
+        "title": "Site survey",
+        "detail": "Levels, drainage, sun map and soil test before any design."
+      },
+      {
+        "title": "3D concepts",
+        "detail": "Two design directions rendered in 3D with itemised BOQ."
+      },
+      {
+        "title": "Build",
+        "detail": "Hardscape, irrigation and lighting with a named project manager."
+      },
+      {
+        "title": "Plant & handover",
+        "detail": "Planting day, walkthrough, care plan and warranty card."
+      }
+    ],
+    "short": "Design-to-handover landscape builds: civil work, irrigation, planting and lighting.",
+    "stats": [
+      {
+        "label": "Projects delivered",
+        "value": "320+"
+      },
+      {
+        "label": "On-time handover",
+        "value": "94%"
+      },
+      {
+        "label": "Hardscape warranty",
+        "value": "1 year"
+      }
+    ],
+    "id": "landscaping"
+  },
+  {
+    "slug": "rooftop-gardens",
+    "description": [
+      "A rooftop in Gurgaon gets full sun, 45°C decks and serious monsoon wind. We engineer for all three: drainage layers, root barriers, wind-hardy species, shade sails and automated drip that survives power cuts.",
+      "From a 300 sq ft tower balcony to a 2,500 sq ft penthouse deck — pergolas, lawns, kitchen gardens and a seating zone that stays usable even in June."
+    ],
+    "faqs": [
+      {
+        "q": "Will a garden damage my terrace waterproofing?",
+        "a": "No — we build drainage cells and root barriers over the waterproofing, and audit it before starting."
+      },
+      {
+        "q": "What's the maintenance load?",
+        "a": "With drip automation, about 30 minutes a week; or hand it to our maintenance plan entirely."
+      },
+      {
+        "q": "Can I have grass on a tower rooftop?",
+        "a": "Natural lawns need deep soil; we usually recommend artificial turf or grass-free lawn alternatives on high-rises."
+      },
+      {
+        "q": "How much does a 1,000 sq ft rooftop cost?",
+        "a": "Typically ₹2.5-6L depending on hardscape share — the proposal tool gives you an instant indicative range."
+      }
+    ],
+    "features": [
+      "Structural weight & waterproofing review",
+      "Drainage cells, root barriers, geotextile",
+      "Wind-hardy planting palette",
+      "Pergolas, decking & shade sails",
+      "Automated drip with rain sensors",
+      "Evening lighting & seating zones"
+    ],
+    "hero_image": "https://images.unsplash.com/photo-1776363284806-873eeef565a7?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "name": "Rooftop & Terrace Gardens",
+    "price_from": 75000,
+    "process": [
+      {
+        "title": "Rooftop audit",
+        "detail": "Load, waterproofing, drainage and wind exposure assessment."
+      },
+      {
+        "title": "Zoning design",
+        "detail": "Deck, lawn, planter and utility zones sized to how you'll actually use it."
+      },
+      {
+        "title": "Build & irrigate",
+        "detail": "Lightweight substrates, drainage cells and drip automation."
+      },
+      {
+        "title": "Plant & season-proof",
+        "detail": "Hardened plants plus a summer/monsoon readiness checklist."
+      }
+    ],
+    "short": "Weight-safe, wind-proof, monsoon-ready terraces — from 300 sq ft to full farmhouses.",
+    "stats": [
+      {
+        "label": "Terraces built",
+        "value": "140+"
+      },
+      {
+        "label": "Largest rooftop",
+        "value": "2,500 sqft"
+      },
+      {
+        "label": "Build time",
+        "value": "7-21 days"
+      }
+    ],
+    "id": "rooftop-gardens"
+  },
+  {
+    "slug": "vertical-gardening",
+    "description": [
+      "A green wall turns a dead wall into the most-photographed corner of the building. We design per-square-foot planting plans — ferns, fittonias, pothos and money plants for indoors; rhoeo, jasmine and grasses outdoors — all fed by a hidden drip line.",
+      "Walls start at ₹900-1,400 per sq ft installed including structure, irrigation and the first month of care. Indoor walls run whisper-quiet; outdoor walls are wind-picked for high floors."
+    ],
+    "faqs": [
+      {
+        "q": "Do green walls attract insects indoors?",
+        "a": "With a closed drip system and monthly grooming, no — water never pools in the room."
+      },
+      {
+        "q": "How much wall does 1 litre of water serve?",
+        "a": "A well-tuned 10 sqft indoor wall uses about a litre a day; timers keep it exact."
+      },
+      {
+        "q": "Can one go on a balcony in a high-rise?",
+        "a": "Yes — we switch to wind-hardy species and clip the structure for high floors."
+      },
+      {
+        "q": "What happens when I travel?",
+        "a": "The drip timer keeps watering; our maintenance plan adds holiday visits for high-maintenance walls."
+      }
+    ],
+    "features": [
+      "Per-sqft planting design & mock-up",
+      "Hidden drip irrigation + timer",
+      "Indoor low-light & outdoor wind palettes",
+      "Powder-coated structure & grow lights",
+      "Monthly grooming visits",
+      "Plant replacement guarantee (first month)"
+    ],
+    "hero_image": "https://images.unsplash.com/photo-1764705639956-801d5b6ef197?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "name": "Vertical Green Walls",
+    "price_from": 900,
+    "process": [
+      {
+        "title": "Wall audit",
+        "detail": "Light meter reading, sight lines and water point mapping."
+      },
+      {
+        "title": "Planting plan",
+        "detail": "A species-per-panel plan tuned to the wall's light gradient."
+      },
+      {
+        "title": "Install",
+        "detail": "Structure, drip line, planting and grow lights in 2-5 days."
+      },
+      {
+        "title": "Groom",
+        "detail": "Monthly visit to prune, feed and rebalance the wall."
+      }
+    ],
+    "short": "Indoor and outdoor living walls with hidden drip — Gurgaon's signature green statement.",
+    "stats": [
+      {
+        "label": "Walls installed",
+        "value": "90+"
+      },
+      {
+        "label": "Rate (installed)",
+        "value": "₹900-1,400/sqft"
+      },
+      {
+        "label": "Install time",
+        "value": "2-5 days"
+      }
+    ],
+    "id": "vertical-gardening"
+  },
+  {
+    "slug": "plants-seller",
+    "description": [
+      "We supply plants at every scale: single pots for a study, 200 planters for a corporate launch, seasonal beds for cafés and weddings. Pot and planter catalogue includes ceramic, terracotta, FRP and self-watering systems.",
+      "Corporate accounts get monthly replenishment cycles, branded pot wraps for gifting and a plant-swap service when seasonal displays fade."
+    ],
+    "faqs": [
+      {
+        "q": "Do you rent plants for events?",
+        "a": "Yes — per-event rental with delivery, styling, pickup, and lower rates for multi-day events."
+      },
+      {
+        "q": "Can I get branded pots for gifting?",
+        "a": "Yes — logo wraps and custom sleeves from 25 units, with a card insert from your team."
+      },
+      {
+        "q": "What's the bulk discount?",
+        "a": "10-25% on 50+ units depending on species and pot choice — WhatsApp us the list."
+      },
+      {
+        "q": "Do you supply cafés on monthly contracts?",
+        "a": "Yes, including weekly rotation of flowering displays for terrace cafés."
+      }
+    ],
+    "features": [
+      "Retail pots, planters & self-watering systems",
+      "Bulk & corporate gifting with branding",
+      "Event & wedding plant rental",
+      "Café / restaurant seasonal displays",
+      "Monthly replenishment contracts",
+      "Same-day Gurgaon delivery"
+    ],
+    "hero_image": "https://images.unsplash.com/photo-1525498128493-380d1990a112?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "name": "Plants Seller & Pots",
+    "price_from": 199,
+    "process": [
+      {
+        "title": "Brief",
+        "detail": "Count, look and budget — WhatsApp photos of your space help."
+      },
+      {
+        "title": "Curate",
+        "detail": "We shortlist plants and pots with a photo proof sheet."
+      },
+      {
+        "title": "Deliver",
+        "detail": "Potted, wrapped and placed by our crew."
+      },
+      {
+        "title": "Refresh",
+        "detail": "Swap or replenish on a monthly cycle for always-fresh displays."
+      }
+    ],
+    "short": "Bulk and retail plant supply — corporate gifting, events, pots and planters.",
+    "stats": [
+      {
+        "label": "Corporate accounts",
+        "value": "40+"
+      },
+      {
+        "label": "Events styled",
+        "value": "250+"
+      },
+      {
+        "label": "Planter options",
+        "value": "120+"
+      }
+    ],
+    "id": "plants-seller"
+  },
+  {
+    "slug": "indoor-landscaping",
+    "description": [
+      "We style interiors with plants the way a decorator styles furniture: sightlines from the door, scale against furniture, and — critically — plants matched to the light they'll actually get, not the light in the photo.",
+      "Every install comes with a light-mapped plant list, self-watering planters where needed, and a 30-day establishment guarantee with a free swap if any plant struggles."
+    ],
+    "faqs": [
+      {
+        "q": "Our office has no windows.",
+        "a": "We design around it — ZZ plants, snake plants and pothos with discreet grow lights thrive in windowless floors."
+      },
+      {
+        "q": "Do indoor plants really help with air quality?",
+        "a": "Meaningfully for VOCs and humidity in closed AC rooms; we'll recommend NASA-listed species where it matters."
+      },
+      {
+        "q": "What does a typical home styling cost?",
+        "a": "₹10k for a living-room refresh; ₹35k-1L for full-home biophilic styling with planters included."
+      },
+      {
+        "q": "Who waters the office plants?",
+        "a": "Choose self-watering planters or fold it into an office AMC — our crew grooms monthly."
+      }
+    ],
+    "features": [
+      "Light-mapped plant selection",
+      "Statement & floor-level styling",
+      "Self-watering planter systems",
+      "Grow lights for windowless zones",
+      "30-day establishment guarantee",
+      "Office AMC with monthly grooming"
+    ],
+    "hero_image": "https://images.unsplash.com/photo-1626965654957-fef1cb80d4b7?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "name": "Indoor Plant Styling",
+    "price_from": 9999,
+    "process": [
+      {
+        "title": "Space study",
+        "detail": "Light meter, AC drafts and sightline mapping on site."
+      },
+      {
+        "title": "Styling board",
+        "detail": "A look-book of placements, pots and plant sizes to approve."
+      },
+      {
+        "title": "Install day",
+        "detail": "Plants potted, placed and left thriving — same day."
+      },
+      {
+        "title": "Settle-in care",
+        "detail": "Two check-ins in the first month, free swaps if needed."
+      }
+    ],
+    "short": "Biophilic interiors for homes, studios and offices — styled, installed, guaranteed.",
+    "stats": [
+      {
+        "label": "Interiors styled",
+        "value": "260+"
+      },
+      {
+        "label": "Guarantee",
+        "value": "30 days"
+      },
+      {
+        "label": "Corporate AMC floors",
+        "value": "35"
+      }
+    ],
+    "id": "indoor-landscaping"
+  },
+  {
+    "slug": "outdoor-landscaping",
+    "description": [
+      "Large-canvas landscaping for farmhouses along the NH-48 belt and villa estates: native trees, lawn zones, orchards, walkways and outdoor dining under real shade.",
+      "We work in Gurgaon's planting windows — amaltas and kachnar in autumn, lawns in spring, fruit orchards in monsoon — so everything establishes in season, not just on day one."
+    ],
+    "faqs": [
+      {
+        "q": "Which trees grow fastest in Gurgaon farmhouses?",
+        "a": "Amaltas, kachnar, chikoo and mulberry establish quickly here; we avoid invasive species like subabul."
+      },
+      {
+        "q": "Can you maintain the lawn through summer?",
+        "a": "Yes — summer lawn care is part of the estate AMC: mowing, aeration, and borewell-timed irrigation."
+      },
+      {
+        "q": "Do you plant orchards?",
+        "a": "Yes — mango, guava, chikoo and lemon orchards with drip rings and a fruiting-season care plan."
+      },
+      {
+        "q": "Budget for a 2,000 sqft estate garden?",
+        "a": "₹4-9L depending on trees and hardscape; the proposal tool gives an indicative split in minutes."
+      }
+    ],
+    "features": [
+      "Tree selection & avenue planning",
+      "Lawn establishment (natural or turf)",
+      "Orchard & kitchen-garden zones",
+      "Walkways, seating & fire-pit zones",
+      "Borewell-fed irrigation rings",
+      "Estate-scale maintenance contracts"
+    ],
+    "hero_image": "https://images.unsplash.com/photo-1543812226-32a17800526b?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "name": "Outdoor Estate Gardens",
+    "price_from": 250000,
+    "process": [
+      {
+        "title": "Estate survey",
+        "detail": "Soil profile, water source, shade and views mapped at scale."
+      },
+      {
+        "title": "Master plan",
+        "detail": "Zones for lawn, orchard, walkways and outdoor living."
+      },
+      {
+        "title": "Season-window build",
+        "detail": "Hardscape and planting scheduled to Gurgaon's planting calendar."
+      },
+      {
+        "title": "Estate care",
+        "detail": "Optional AMC with full-time gardener placement."
+      }
+    ],
+    "short": "Farmhouses, villa lawns and estate grounds — trees, lawns, orchards and outdoor living.",
+    "stats": [
+      {
+        "label": "Estates landscaped",
+        "value": "60+"
+      },
+      {
+        "label": "Largest site",
+        "value": "2.5 acres"
+      },
+      {
+        "label": "Trees planted",
+        "value": "4,000+"
+      }
+    ],
+    "id": "outdoor-landscaping"
+  }
+]

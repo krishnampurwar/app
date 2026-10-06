@@ -22,7 +22,7 @@ export default function Contact() {
         <div>
           <SectionHeading overline="Consultation" title="Tell us about your space" description="Free audit, honest advice, no pressure. We reply within a few hours." />
           <div className="mt-8 rounded-2xl border border-border bg-card p-6 sm:p-8">
-            <LeadForm source="contact" interest="Contact / consultation" submitLabel="Request a callback" testid="contact-lead" />
+            <LeadForm source="contact" submitLabel="Request a callback" testid="contact-lead" />
           </div>
         </div>
 

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { CalendarCheck, Camera, MessageCircle, Repeat, ShieldCheck } from "lucide-react";
-import { apiGet } from "@/lib/api";
+import { getPlans } from "@/lib/content";
 import type { Plan } from "@/lib/types";
 import { Container, PageHero, SectionHeading, SkeletonGrid, WhatsAppButton, rupees } from "@/components/Shared";
 import { Button } from "@/components/ui/button";
@@ -19,7 +19,7 @@ const PROMISES = [
 ];
 
 export default function Maintenance() {
-  const { data: plans } = useQuery({ queryKey: ["plans"], queryFn: () => apiGet<Plan[]>("/plans") });
+  const { data: plans } = useQuery({ queryKey: ["plans"], queryFn: getPlans });
   const [plan, setPlan] = useState<Plan | null>(null);
 
   return (
@@ -109,8 +109,6 @@ export default function Maintenance() {
               <div className="mt-5">
                 <LeadForm
                   source="maintenance"
-                  interest={`${plan.name} maintenance plan`}
-                  message={`I want the ${plan.name} plan (${rupees(plan.price)} ${plan.cadence}).`}
                   testid="maintenance-lead"
                   submitLabel="Subscribe & book audit"
                   onSuccess={() => setPlan(null)}

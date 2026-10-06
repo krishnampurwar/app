@@ -58,10 +58,15 @@ export default function AiConsultant() {
     setImage(null);
 
     try {
+      // Backend is stateless — we send the recent turns so AJ keeps context.
+      const priorTurns = messages
+        .filter((m) => m.text)
+        .slice(-8)
+        .map((m) => ({ role: m.role, text: m.text }));
       const res = await apiStreamPost("/ai/ask-aj", {
-        session_id: sessionId,
         message: trimmed || "Please assess this photo of my space.",
         image_b64: hadImage ? image : undefined,
+        history: priorTurns,
       });
       if (!res.ok || !res.body) throw new Error(`status ${res.status}`);
 
@@ -221,7 +226,7 @@ export default function AiConsultant() {
             We'll continue your AJ conversation with a real horticulturist — bring the plants, the photos, the plans.
           </p>
           <div className="mt-5">
-            <LeadForm source="ask_aj" interest="Nursery visit after AI consult" testid="ask-aj-lead" submitLabel="Book my visit" onSuccess={() => setLeadOpen(false)} />
+            <LeadForm source="ask_aj" testid="ask-aj-lead" submitLabel="Book my visit" onSuccess={() => setLeadOpen(false)} />
           </div>
         </DialogContent>
       </Dialog>

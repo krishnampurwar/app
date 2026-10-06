@@ -1,12 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
 import { Check, MapPin, Ruler, Timer } from "lucide-react";
-import { apiGet } from "@/lib/api";
+import { getProjects } from "@/lib/content";
 import type { Project } from "@/lib/types";
 import { Container, PageHero, PrimaryLink, SectionHeading, SkeletonGrid, WhatsAppButton } from "@/components/Shared";
 import { badgeVariants } from "@/components/ui/badge";
 
 export default function CaseStudies() {
-  const { data: projects } = useQuery({ queryKey: ["projects"], queryFn: () => apiGet<Project[]>("/projects") });
+  const { data: projects } = useQuery({ queryKey: ["projects"], queryFn: getProjects });
 
   return (
     <div>
