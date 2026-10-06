@@ -1,0 +1,359 @@
+{
+  "project_name": "AJ Heaven's Harvest Nursery & Landscaping",
+  "archetype": "ARCHETYPE 1: ORGANIC & EARTHY + LUXURY BIOPHILIC (Trust, Growth, Botanical Elegance)",
+  "brand_identity": {
+    "name": "AJ Heaven's Harvest Nursery",
+    "logo_url": "https://customer-assets-wrfwihn1.emergentagent.net/job_1a1a3934-60b8-404f-916a-c3e96e03d80a/artifacts/1lpk0rcn_AJ%20LOgo.png",
+    "tagline": "Gurgaon's Premier Botanical Studio & AI-Powered Landscape Craftsmen",
+    "whatsapp_number": "+91 93362 39079",
+    "whatsapp_link": "https://wa.me/919336239079",
+    "location": "Gurgaon, Haryana, India (Serving Golf Course Rd, DLF Ph 1-5, Sohna Rd, Nirvana, & NCR)"
+  },
+  "colors": {
+    "surfaces": [
+      {
+        "name": "page",
+        "kind": "solid",
+        "bg": "#F8F9F5",
+        "on_bg": "#14261C",
+        "on_bg_muted": "#4E6155",
+        "roles": {
+          "link": "#1E5438",
+          "error": "#9E2A2B",
+          "success": "#1B6B42"
+        }
+      },
+      {
+        "name": "panel",
+        "kind": "solid",
+        "bg": "#FFFFFF",
+        "on_bg": "#14261C",
+        "on_bg_muted": "#52675C",
+        "roles": {
+          "link": "#1E5438",
+          "error": "#9E2A2B",
+          "success": "#1B6B42"
+        }
+      },
+      {
+        "name": "panel_muted",
+        "kind": "solid",
+        "bg": "#EEF3EC",
+        "on_bg": "#11261B",
+        "on_bg_muted": "#475D51"
+      },
+      {
+        "name": "inverse",
+        "kind": "solid",
+        "bg": "#0D1B13",
+        "on_bg": "#F4F7F4",
+        "on_bg_muted": "#A2B8AA",
+        "roles": {
+          "link": "#8ED6B1",
+          "error": "#FCA5A5",
+          "success": "#6EE7B7"
+        }
+      },
+      {
+        "name": "hero",
+        "kind": "image",
+        "contrast_against": "#08130D",
+        "guarantee": "scrim: linear-gradient(180deg, rgba(13,27,19,0.85) 0%, rgba(13,27,19,0.7) 60%, rgba(13,27,19,0.95) 100%)",
+        "on_bg": "#F7FAF8",
+        "on_bg_muted": "#C2D4C9",
+        "roles": {
+          "link": "#86EFAC",
+          "error": "#FCA5A5",
+          "success": "#86EFAC"
+        }
+      },
+      {
+        "name": "floating_glass",
+        "kind": "glass",
+        "contrast_against": "#183224",
+        "guarantee": "glass: backdrop-blur-xl bg-emerald-950/80 border border-emerald-400/20 backdrop-saturate-150",
+        "on_bg": "#FFFFFF",
+        "on_bg_muted": "#CBD5E1"
+      },
+      {
+        "name": "badge_botanical",
+        "kind": "solid",
+        "bg": "#E2ECE5",
+        "on_bg": "#164E2E",
+        "on_bg_muted": "#2F6546"
+      },
+      {
+        "name": "badge_gold",
+        "kind": "solid",
+        "bg": "#FEF3C7",
+        "on_bg": "#78350F",
+        "on_bg_muted": "#92400E"
+      }
+    ],
+    "accent": "#206D43",
+    "on_accent": "#FFFFFF",
+    "accent_warm": "#C59B27",
+    "on_accent_warm": "#1A1502",
+    "accent_subtle": "#E8F5EC"
+  },
+  "typography": {
+    "font_family_heading": "Lora Variable, Georgia, serif",
+    "font_family_sans": "DM Sans Variable, sans-serif",
+    "font_family_mono": "IBM Plex Mono, monospace",
+    "scale_px": {
+      "display": 56,
+      "h1": 44,
+      "h2": 32,
+      "h3": 22,
+      "body": 16,
+      "caption": 14
+    },
+    "typesetting": {
+      "h1_classes": "font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-emerald-950 dark:text-emerald-50 leading-[1.15]",
+      "h2_classes": "font-serif text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-emerald-950 dark:text-emerald-50 leading-snug",
+      "h3_classes": "font-sans text-lg sm:text-xl font-bold tracking-tight text-emerald-900 dark:text-emerald-100",
+      "overline_classes": "font-mono uppercase text-xs tracking-[0.2em] font-semibold text-emerald-700 dark:text-emerald-400",
+      "body_classes": "font-sans text-base leading-relaxed text-emerald-900/80 dark:text-emerald-200/80",
+      "caption_classes": "font-sans text-sm text-emerald-800/70 dark:text-emerald-300/70"
+    }
+  },
+  "entry_surfaces": {
+    "/": "Asymmetric Botanical Masterpiece — Brand headline + instant AI Space Assessment left, live nursery badge + interactive preview grid right",
+    "/services": "Service Category Architecture — 8 bespoke landscape & nursery specialized vertical pillars with dynamic pricing tiers & instant quote triggers",
+    "/services/:slug": "Deep Service Pillar — Hero banner with case stats, process timeline, Gurgaon climate suitability matrix, and instant WhatsApp booking",
+    "/locations": "Gurgaon Micro-Market Matrix — DLF, Golf Course Rd, Sohna Rd hyper-local botanical blueprints with soil, sunlight, and villa/apartment specs",
+    "/locations/:slug": "Hyper-local Gurgaon Neighborhood Garden Page — Microclimate profile, soil guide, local project showcase, and localized AI garden quote",
+    "/shop": "Botanical Nursery Catalog — Filterable plant collection (Air Purifying, Indoor, Outdoor, Rare Exotic, Bonsai, Planters) with one-click WhatsApp buying",
+    "/ai-consultant": "Ask AJ – Streaming AI Garden Consultant — Conversational multi-turn bot with photo diagnosis, space sunlight analysis, and streaming guidance",
+    "/ai-landscape-designer": "AI Landscape Concept Generator — Balcony/Terrace/Villa space photo upload, automated INR budget estimator, and 3 distinct generated visual concepts",
+    "/ai-plant-doctor": "AI Botanical Clinic & Disease Diagnostician — Leaf/plant photo upload, symptom breakdown (watering, pests, soil, light) & 1-tap maintenance booking",
+    "/ai-plant-finder": "What Plant Should I Buy? Quiz — 3-step interactive recommendation flow matching Gurgaon indoor/balcony conditions to 3 ideal plants",
+    "/ai-proposal-generator": "Instant AI Landscape Proposal Studio — Structured brief input producing a downloadable/printable architectural-grade preliminary proposal",
+    "/maintenance": "Care & Maintenance Memberships — Basic Monthly, Premium Bi-Weekly, Complete Luxury Weekly + pest coverage and free replacement guarantees",
+    "/case-studies": "Gurgaon Landscape Transformations — Before & After split slider showcases across luxury penthouses, corporate offices, and farmhouses",
+    "/contact": "Botanical Studio & Nursery Visit Hub — Map coords, direct call, WhatsApp dispatch, nursery visit scheduling & urgent consultation form",
+    "/admin": "PIN-Gated Operations & Lead Management Command Center — Real-time lead CRM classified into Hot/Warm/Cold with proposal download and direct WhatsApp dispatch"
+  },
+  "navigation_structure": {
+    "desktop_header": {
+      "brand": "AJ Heaven's Harvest logo (height: 48px) + botanical wordmark",
+      "main_links": [
+        {"label": "Plants & Nursery", "href": "/shop"},
+        {
+          "label": "Services",
+          "href": "/services",
+          "children": [
+            {"label": "Garden Maintenance", "href": "/services/garden-maintenance"},
+            {"label": "Plant Nursery", "href": "/services/plant-nursery"},
+            {"label": "Landscaping & Hardscaping", "href": "/services/landscaping"},
+            {"label": "Rooftop & Terrace Gardens", "href": "/services/rooftop-gardens"},
+            {"label": "Vertical Green Walls", "href": "/services/vertical-gardening"},
+            {"label": "Indoor Plant Styling", "href": "/services/indoor-landscaping"},
+            {"label": "Outdoor Estate Gardens", "href": "/services/outdoor-landscaping"},
+            {"label": "Plants Seller & Pots", "href": "/services/plants-seller"}
+          ]
+        },
+        {
+          "label": "AI Garden Suite",
+          "href": "/ai-consultant",
+          "children": [
+            {"label": "Ask AJ (AI Consultant)", "href": "/ai-consultant", "badge": "Streaming"},
+            {"label": "AI Landscape Designer", "href": "/ai-landscape-designer", "badge": "Free Concept"},
+            {"label": "AI Plant Doctor", "href": "/ai-plant-doctor", "badge": "Photo Diagnosis"},
+            {"label": "Plant Match Quiz", "href": "/ai-plant-finder", "badge": "Instant"},
+            {"label": "AI Proposal Generator", "href": "/ai-proposal-generator", "badge": "Printable"}
+          ]
+        },
+        {"label": "Maintenance Plans", "href": "/maintenance"},
+        {"label": "Gurgaon Areas", "href": "/locations"},
+        {"label": "Projects", "href": "/case-studies"}
+      ],
+      "actions": [
+        {
+          "label": "WhatsApp Quote",
+          "href": "https://wa.me/919336239079?text=Hi%20AJ%20Harvest%20Team%2C%20I%20want%20a%20garden%20landscape%20consultation",
+          "type": "whatsapp_cta",
+          "test_id": "nav-whatsapp-cta-button"
+        },
+        {
+          "label": "AI Space Scan",
+          "href": "/ai-landscape-designer",
+          "type": "primary_cta",
+          "test_id": "nav-ai-designer-cta-button"
+        }
+      ]
+    },
+    "floating_whatsapp_widget": {
+      "enabled": true,
+      "phone": "+919336239079",
+      "position": "bottom-6 right-6 z-40",
+      "prefilled_text": "Hello AJ Nursery Team! I need guidance for my garden in Gurgaon.",
+      "test_id": "floating-whatsapp-trigger"
+    }
+  },
+  "image_urls": {
+    "brand_logo": {
+      "url": "https://customer-assets-wrfwihn1.emergentagent.net/job_1a1a3934-60b8-404f-916a-c3e96e03d80a/artifacts/1lpk0rcn_AJ%20LOgo.png",
+      "category": "brand",
+      "description": "AJ Heaven's Harvest Nursery official logo with green leaf and botanical typography"
+    },
+    "hero_nursery_greenhouse": {
+      "url": "https://images.unsplash.com/photo-1598902468171-0f50e32a7bf2?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzV8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBwbGFudCUyMG51cnNlcnklMjBncmVlbmhvdXNlJTIwcGxhbnRzfGVufDB8fHx8MTc5MDc0ODA1OXww&ixlib=rb-4.1.0&q=85",
+      "category": "hero",
+      "description": "Lush nursery greenhouse filled with thriving tropical flowers and exotic foliage"
+    },
+    "rooftop_terrace_luxury": {
+      "url": "https://images.unsplash.com/photo-1776363284806-873eeef565a7?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzd8MHwxfHNlYXJjaHwzfHxtb2Rlcm4lMjByb29mdG9wJTIwdGVycmFjZSUyMGdhcmRlbiUyMGxhbmRzY2FwaW5nfGVufDB8fHx8MTc5MDc0ODA1OXww&ixlib=rb-4.1.0&q=85",
+      "category": "services",
+      "description": "Modern rooftop terrace patio garden with pergola, architectural planters and seating"
+    },
+    "rooftop_aerial_view": {
+      "url": "https://images.unsplash.com/photo-1543812226-32a17800526b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjByb29mdG9wJTIwdGVycmFjZSUyMGdhcmRlbiUyMGxhbmRzY2FwaW5nfGVufDB8fHx8MTc5MDc0ODA1OXww&ixlib=rb-4.1.0&q=85",
+      "category": "services",
+      "description": "Architectural aerial plan of expansive rooftop landscaped urban terrace"
+    },
+    "vertical_garden_living_wall": {
+      "url": "https://images.unsplash.com/photo-1764705639956-801d5b6ef197?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NDh8MHwxfHNlYXJjaHwzfHx2ZXJ0aWNhbCUyMGdhcmRlbiUyMHdhbGwlMjBpbmRvb3IlMjBwbGFudHMlMjBsaXZpbmclMjByb29tfGVufDB8fHx8MTc5MDc0ODA1OXww&ixlib=rb-4.1.0&q=85",
+      "category": "services",
+      "description": "Flourishing indoor vertical living green wall installation in modern home"
+    },
+    "indoor_plant_styling": {
+      "url": "https://images.unsplash.com/photo-1626965654957-fef1cb80d4b7?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NDh8MHwxfHNlYXJjaHwxfHx2ZXJ0aWNhbCUyMGdhcmRlbiUyMHdhbGwlMjBpbmRvb3IlMjBwbGFudHMlMjBsaXZpbmclMjByb29tfGVufDB8fHx8MTc5MDc0ODA1OXww&ixlib=rb-4.1.0&q=85",
+      "category": "services",
+      "description": "Botanical indoor plant living room styling with potted monsteras and ficus"
+    },
+    "nursery_walkway_greenhouse": {
+      "url": "https://images.unsplash.com/photo-1599334064100-4d3a0cc7332c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzV8MHwxfHNlYXJjaHwzfHxsdXh1cnklMjBwbGFudCUyMG51cnNlcnklMjBncmVlbmhvdXNlJTIwcGxhbnRzfGVufDB8fHx8MTc5MDc0ODA1OXww&ixlib=rb-4.1.0&q=85",
+      "category": "gallery",
+      "description": "Sunlit nursery path surrounded by mature indoor palms, monsteras and terracotta pottery"
+    },
+    "nursery_shelf_pots": {
+      "url": "https://images.unsplash.com/photo-1683994851774-6e9642fb8a95?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzV8MHwxfHNlYXJjaHw0fHxsdXh1cnklMjBwbGFudCUyMG51cnNlcnklMjBncmVlbmhvdXNlJTIwcGxhbnRzfGVufDB8fHx8MTc5MDc0ODA1OXww&ixlib=rb-4.1.0&q=85",
+      "category": "shop",
+      "description": "Curated collection of exotic indoor foliage plants on tiered nursery display stands"
+    }
+  },
+  "ai_tools_architecture": {
+    "tool_1_ask_aj_consultant": {
+      "title": "Ask AJ – AI Garden & Landscape Consultant",
+      "route": "/ai-consultant",
+      "features": [
+        "Real-time streaming text responses with botanical domain intelligence",
+        "Image upload parser (analyzes balcony orientation, sun glare, space dimensions, plant issues)",
+        "Gurgaon-specific climate context (extreme summer 45°C heat, monsoon, winter smog resistance)",
+        "Pre-baked quick prompt chips: 'Best balcony plants for morning sun in DLF Phase 5', 'How to fix yellowing Areca Palm leaves', 'Cost of 500 sq ft terrace garden in Golf Course Ext'",
+        "Direct CTA at end of conversation: 'Export Chat & Book Nursery Visit on WhatsApp'"
+      ]
+    },
+    "tool_2_ai_landscape_designer": {
+      "title": "AI Landscape Concept Generator",
+      "route": "/ai-landscape-designer",
+      "features": [
+        "Space Type selector: Balcony (50-200 sqft), Terrace / Rooftop (300-2500 sqft), Villa Front / Backyard (1000-8000 sqft), Corporate Office, Indoor Atrium",
+        "Upload space photo or video dropzone",
+        "Generates 3 distinctive concept tiers: 1. Minimalist Low-Maintenance (₹35k-75k), 2. Modern Biophilic with Vertical Wall (₹1.2L-2.5L), 3. Luxury Zen Oasis with Pergola & Drip Irrigation (₹3.5L-7L+)",
+        "Includes plant palette list, maintenance frequency rating, estimated implementation timeline (7-21 days)",
+        "Instant WhatsApp 'Get Architect On-Site Survey for This Concept' button"
+      ]
+    },
+    "tool_3_ai_plant_doctor": {
+      "title": "AI Plant Doctor & Botanical Clinic",
+      "route": "/ai-plant-doctor",
+      "features": [
+        "Sick plant leaf/stem photo upload with instant visual scanning animation",
+        "AI diagnosis covering: Overwatering / Root Rot, Underwatering & Heat Stress, Pest Infestation (Mealybugs, Spider Mites), Nutrient Deficiency (Nitrogen/Iron Chlorosis), Sunlight Scorching",
+        "Confidence score + Severity level (Mild / Moderate / Critical)",
+        "Step-by-step 7-day recovery protocol",
+        "Direct CTA: 'Order Organic Treatment Kit or Book Plant Doctor Home Visit (₹499)'"
+      ]
+    },
+    "tool_4_plant_match_quiz": {
+      "title": "What Plant Should I Buy? (30-Second Quiz)",
+      "route": "/ai-plant-finder",
+      "features": [
+        "Step 1: Placement Area (Living Room / Bedroom Desk / High Balcony / Terrace Garden / Corporate Cabin)",
+        "Step 2: Sunlight Availability (Direct 4+ hours / Bright Indirect / Low Fluorescent light)",
+        "Step 3: Care Commitment (I forget to water / Moderate weekend care / Plant enthusiast)",
+        "Step 4: Special traits (Pet-Safe, Air-Purifier NASA rated, Flowering, High Oxygen night emitter)",
+        "Returns top 3 matched plants from catalog with price in INR, air purity index, and direct WhatsApp buy deep-link"
+      ]
+    },
+    "tool_5_ai_proposal_generator": {
+      "title": "AI Instant Landscape Proposal Studio",
+      "route": "/ai-proposal-generator",
+      "features": [
+        "Structured input form: Property Type, Area size in sq.ft, Location in Gurgaon, Desired features (Lawn, Vertical Garden, Fountain, Drip Automation, Lighting, Fruit trees), Estimated Budget Range (₹50k to ₹15L+)",
+        "Generates a complete multi-section formal Landscape Proposal document on AJ Heaven's Harvest official letterhead",
+        "Document includes: Executive Summary, Scope of Work, Recommended Botanical & Hardscape Palette, Phased Timeline, Itemized Cost Breakdown in INR, Warranty & Post-Installation Maintenance Guarantee",
+        "Actions: 'Print / Download as PDF', 'Share to WhatsApp', and 'Save & Request Physical Survey'"
+      ]
+    }
+  },
+  "gurgaon_seo_locations": [
+    {
+      "slug": "dlf-phase-1-2-3-4-5",
+      "name": "DLF Phase 1, 2, 3, 4 & 5",
+      "highlights": "Luxury Villa & Penthouse Landscaping, Balcony Green Walls for The Crest & The Magnolias",
+      "popular_services": ["Terrace Gazebos & Greenery", "Biophilic Indoor Styling", "Weekly Maintenance AMC"]
+    },
+    {
+      "slug": "golf-course-road",
+      "name": "Golf Course Road",
+      "highlights": "Ultra-Luxury Condominiums & Corporate Headquarters Landscaping (Aralias, Camellias, Belaire)",
+      "popular_services": ["Vertical Gardens", "Automated Drip Irrigation", "Exotic Palm Installation"]
+    },
+    {
+      "slug": "golf-course-extension-road",
+      "name": "Golf Course Extension Road",
+      "highlights": "Modern High-rise Balcony Transformations (M3M Golfestate, Grand Hyatt Residences, Ireo)",
+      "popular_services": ["Wind-Resistant Balcony Plants", "Artificial Turf & Pebble Accents", "Herb & Kitchen Gardens"]
+    },
+    {
+      "slug": "sohna-road",
+      "name": "Sohna Road & South City 2",
+      "highlights": "Gated Community Villas & Large Terraces (Vipul Greens, Tatvam Villas, Nirvana Country)",
+      "popular_services": ["Lawn Landscaping", "Fruit & Flowering Trees", "Bi-Weekly Garden Maintenance"]
+    },
+    {
+      "slug": "new-gurgaon-sectors",
+      "name": "New Gurgaon (Sectors 82-95)",
+      "highlights": "Budget-Smart Balcony & Terrace Greenery for Growing Families",
+      "popular_services": ["Low-Maintenance Air Purifiers", "Balcony Planters Setup", "Plant Doctor Clinic Visits"]
+    },
+    {
+      "slug": "sector-14-sector-29-old-gurgaon",
+      "name": "Old Gurgaon & Sector 14 / 29",
+      "highlights": "Traditional Kothi Gardens, Commercial Restaurant Green Landscaping, Nursery Supplies",
+      "popular_services": ["Seasonal Flower Bed Revival", "Organic Fertilizer & Repotting", "Hedge & Shrub Sculpting"]
+    },
+    {
+      "slug": "manesar-industrial-farmhouses",
+      "name": "Manesar & NH-48 Farmhouses",
+      "highlights": "Large Acreage Farmhouse Landscaping, Industrial Estate Green Belts, Fruit Orchards",
+      "popular_services": ["Estate Hardscaping & Lawns", "Commercial Green Certification", "Comprehensive Landscape AMC"]
+    }
+  ],
+  "lead_management_and_admin": {
+    "route": "/admin",
+    "auth": "PIN Protected (Default Demo PIN: 9079 or 1234)",
+    "capabilities": [
+      "Real-time Lead Ingestion from all 5 AI tools, Contact Form, Maintenance Subscribe modal, and Catalog WhatsApp triggers",
+      "Automatic Lead Scoring: HOT (budget specified >₹1L or uploaded photo + requested call), WARM (completed quiz/AI chat with phone), COLD (browsed catalog/proposal generated)",
+      "Lead Details Drawer: shows uploaded space photos, AI proposal parameters, plant recommendations, contact timestamps",
+      "One-click 'Open in WhatsApp' pre-filled with customer's specific proposal or diagnostic result",
+      "Export leads to CSV, mark as In Progress / Converted / Closed"
+    ]
+  },
+  "instructions_to_main_agent": [
+    "Template is farm-ts (FastAPI in backend/ + React 19 Vite in frontend/). Use existing client-side and backend endpoints seamlessly.",
+    "Brand logo is strictly: https://customer-assets-wrfwihn1.emergentagent.net/job_1a1a3934-60b8-404f-916a-c3e96e03d80a/artifacts/1lpk0rcn_AJ%20LOgo.png — render crisp and appropriately sized in Header, Footer, Hero badges, and Printable Proposals.",
+    "WhatsApp number across all CTAs: 919336239079 with URL https://wa.me/919336239079?text=... (Ensure clean URL encoding for prefilled context).",
+    "All 5 AI Tools must feel instant, tactile, responsive and intelligent. Ask AJ must support streaming simulation or real backend LLM integration via emergent integrations/OpenAI API fallback with rich botanical expertise tailored to Gurgaon climate (Delhi NCR dry summer, monsoon humidity, winter fog).",
+    "AI Plant Doctor must accept image upload via drag-and-drop or file picker, render a scanning laser effect, and output structured diagnostic cards with severity pills.",
+    "AI Proposal Generator must render an executive, printable clean sheet with print-ready CSS (`@media print`) so users can click 'Download/Print Official Proposal'.",
+    "All interactive elements MUST have explicit data-testid attributes (e.g. data-testid='ask-aj-input', data-testid='plant-quiz-step-1', data-testid='admin-pin-input', data-testid='whatsapp-lead-button').",
+    "Provide rich plant catalog with interactive search, category filters (Air Purifiers, Flowering, Balcony, Indoor, Low Light, Succulents, Exotic Bonsai, Pots), plant detail modal, and WhatsApp 'Buy This Plant' CTA.",
+    "Provide PIN admin dashboard at /admin with responsive table, metric cards (Total Leads, Hot Leads, Generated Proposals, Revenue Pipeline), lead status filter, and WhatsApp 1-tap message dispatch.",
+    "Maintain high aesthetic standards: Deep botanical greens, warm cream stone backgrounds, crisp emerald accent borders, smooth motion transitions, no generic AI slop."
+  ]
+}
