@@ -183,6 +183,7 @@ export default function Home() {
             overline="Care subscriptions"
             title="A garden is a habit, not a project"
             description="Landscapes stay lush on a plan: monthly, bi-weekly or full weekly care with free plant replacement."
+            style={{ color: '#FFFFFF' }}
           />
           <div className="mt-10 grid gap-5 md:grid-cols-3">
             {(plans ?? []).map((pl) => (
